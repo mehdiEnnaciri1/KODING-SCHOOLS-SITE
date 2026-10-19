@@ -1,0 +1,281 @@
+{
+  "updated": "2026-10-01",
+  "purpose": "Prototype local de la page d’accueil Koding Schools, /refonte",
+  "kobot": {
+    "file": "kobot-transparent.png",
+    "origin": "ImageGen, adaptation de la proposition de marque validée",
+    "brief": "Kobot 3D turquoise, visage blanc, antennes corail, insigne K ; silhouette détourée, lumière studio, fond transparent pour présentation sur blanc.",
+    "original": "/Users/malikbouachrine/.codex/generated_images/01a0f433-fa73-7ac1-b1da-d271c10f7eb3/exec-e21302a4-2b51-487c-8582-f06304a88ec6.png",
+    "motion": "Visuel original conservé. Arrivée amplifiée de 3,2 secondes (montée, bascule et rebond amorti). Défilement : jusqu’à 68 px de translation verticale et 17 degrés d’inclinaison. Au pointeur : approche de 6,5 %, élévation de 20 px et orientation selon le point visé. Retour doux à la sortie. Aucune boucle automatique ni bouton Pause pour Kobot ; respect du mouvement réduit."
+  },
+  "assets": [
+    {
+      "file": "blockly-activity.png",
+      "origin": "Capture de l’activité réelle, sans données de compte",
+      "url": "https://kodingschools.com/wp-content/blockly/charger/text-if/C3L12/3/index.php?langue=fr"
+    },
+    {
+      "file": "logos/inwi.png",
+      "url": "https://kodingschools.com/wp-content/uploads/2023/06/inwi.png"
+    },
+    {
+      "file": "logos/2m.png",
+      "url": "https://kodingschools.com/wp-content/uploads/2023/06/logo-2m-1.png"
+    },
+    {
+      "file": "logos/h24.jpg",
+      "url": "https://kodingschools.com/wp-content/uploads/2023/06/H24.jpg"
+    },
+    {
+      "file": "logos/maghreb-voices.png",
+      "url": "https://kodingschools.com/wp-content/uploads/elementor/thumbs/logo_Maghreb_Voices-rnlwdnvgu86eqe1p7irpdvuvtrde4dahbrozs5phg8.png"
+    },
+    {
+      "file": "logos/ebrd.svg",
+      "url": "https://www.ebrd.com/content/dam/ebrd_dxp/background-images/ebrd-regular.svg",
+      "display": "Copie vectorielle monochrome grise pour le carrousel ; géométrie inchangée.",
+      "displayFile": "logos/ebrd-gray.svg"
+    },
+    {
+      "file": "logos/tamwilcom.svg",
+      "url": "https://www.tamwilcom.ma/themes/custom/tamwilcom/images/header-logo.svg",
+      "display": "Copie vectorielle monochrome grise pour le carrousel ; géométrie inchangée.",
+      "displayFile": "logos/tamwilcom-gray.svg"
+    },
+    {
+      "file": "logos/startup-maroc.png",
+      "url": "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/1501203/_Logo_Startup_Maroc_luxwoa.png"
+    },
+    {
+      "file": "logos/mastercard-foundation.png",
+      "url": "https://mastercardfdn.org/en/mastercard-foundation-brand-guidelines/",
+      "archive": "https://cdn.buttercms.com/MPuSQak9T7WMs107u9iV",
+      "entry": "Mastercard Foundation Logos/Logos/Full Colour .png"
+    },
+    {
+      "file": "logos/la-startup-station.png",
+      "url": "https://superscout.co/accelerator/lastartupstation",
+      "note": "Icône identifiée dans cet annuaire, site officiel indisponible au téléchargement."
+    },
+    {
+      "file": "equipe/malik.png",
+      "origin": "Portrait fourni par le fondateur dans cette conversation, 2026-10-01 ; fichier inchangé, cadrage de présentation CSS."
+    },
+    {
+      "file": "equipe/jamila.png",
+      "origin": "Portrait fourni par le fondateur dans cette conversation, 2026-10-01 ; fichier inchangé, cadrage de présentation CSS."
+    },
+    {
+      "file": "equipe/marouane.png",
+      "origin": "Portrait fourni par le fondateur dans cette conversation, 2026-10-01 ; fichier inchangé, cadrage de présentation CSS."
+    },
+    {
+      "file": "equipe/oualid.png",
+      "origin": "Portrait fourni par le fondateur dans cette conversation, 2026-10-01 ; fichier inchangé, cadrage de présentation CSS."
+    },
+    {
+      "file": "seance/video-preparation.png",
+      "url": "https://www.youtube.com/watch?v=zZsFsP6izLs",
+      "origin": "Capture du support original dans Chrome le 1 octobre 2026 ; cadrage sans compte ni données personnelles."
+    },
+    {
+      "file": "seance/slides-programmer.png",
+      "url": "https://docs.google.com/presentation/d/e/2PACX-1vQa5LesJomO-kqu9bHEJyFeHs-RDJD597LYbhEiwPiqVhjiGjfJwU9Dc__CrVTejw/embed?start=false&loop=false&delayms=3000&slide=id.p2",
+      "origin": "Capture du support original dans Chrome le 1 octobre 2026 ; cadrage sans compte ni données personnelles."
+    },
+    {
+      "file": "seance/blockly-sequence.png",
+      "url": "https://kodingschools.com/wp-content/blockly/maze/text/C2L3/5/index.php?langue=fr",
+      "origin": "Capture du support original dans Chrome le 1 octobre 2026 ; cadrage sans compte ni données personnelles."
+    },
+    {
+      "file": "seance/cahier-programme.png",
+      "url": "https://drive.google.com/file/d/1zeZc9PmCwbcMB-n4km518XVDMxZPMp0D/preview",
+      "origin": "Capture du support original dans Chrome le 1 octobre 2026 ; cadrage sans compte ni données personnelles."
+    },
+    {
+      "file": "aia-teacher.png",
+      "url": "https://aia-aws.kodingschools.com/static/img/aia-teacher.png",
+      "origin": "Icône originale Teacher Bot du widget AIA de la plateforme, identifiée dans son interface le 1 octobre 2026 ; fichier inchangé."
+    },
+    {
+      "file": "seance/slides-premiere.png",
+      "url": "https://docs.google.com/presentation/d/e/2PACX-1vQa5LesJomO-kqu9bHEJyFeHs-RDJD597LYbhEiwPiqVhjiGjfJwU9Dc__CrVTejw/embed?start=false&loop=false&delayms=3000&slide=id.p1",
+      "origin": "Capture de la première diapositive réelle, sans contrôles du lecteur."
+    },
+    {
+      "file": "seance/cahier-premiere-page.png",
+      "url": "https://drive.google.com/file/d/1zeZc9PmCwbcMB-n4km518XVDMxZPMp0D/preview",
+      "origin": "Capture de la première page entière du cahier, sans contrôles du lecteur."
+    },
+    {
+      "file": "testimony-oumayma.png",
+      "url": "https://www.youtube.com/watch?v=yFxfX9bH_Hw",
+      "origin": "Capture originale de la vidéo à 2:32, cadrée sur Oumayma ; aucun portrait généré ni retouché."
+    }
+  ],
+  "testimony": {
+    "name": "Planet Montessori International School",
+    "video": "https://www.youtube.com/watch?v=yFxfX9bH_Hw",
+    "thumbnail": "https://i.ytimg.com/vi/yFxfX9bH_Hw/hqdefault.jpg",
+    "speaker": "Oumayma",
+    "role": "Enseignante d’informatique",
+    "identityEvidence": "Sous-titre français à 0:35 : Mademoiselle Oumayma, ingénieure en informatique ; titre vidéo Computer Science Teacher et présentation de son école à 0:41.",
+    "quote": "Ils ne s’ennuient jamais pendant la leçon.",
+    "quoteEvidence": "Phrase visible dans le sous-titre français incrusté à 2:32, corroborée par la transcription anglaise automatique entre 2:29 et 2:32. Traduction signalée dans la section.",
+    "duration": "2 min 58",
+    "design": "Portrait extrait du témoignage à gauche, citation attribuée à droite, disposition empilée sur mobile. Lecture publique sur YouTube dans un nouvel onglet.",
+    "motion": "Apparition photo et citation au défilement ; zoom limité à 3,5 % sur la photo au survol. Réduction des mouvements respectée."
+  },
+  "content": {
+    "basis": "Échanges avec le fondateur et Programme cible Koding Schools.xlsx, feuille Programme cible, colonnes C à L et lignes 5 à 9. Les références de cellules sont conservées dans src/domain/refonte/content.ts.",
+    "illustrations": "Captures réelles Blockly et supports du cours Introduction Algorithmes & programmes ; démonstrations originales de binaire et de phishing ; illustration de podcast et graphique interactif avec données fictives. Les légendes distinguent exemples et supports réels.",
+    "correction": "Aucune présentation d’Arduino comme plateforme utilisée. Blockly, électronique virtuelle, robotique virtuelle, IA, web, Python, citoyenneté digitale, médias et data sont explicitement mentionnés.",
+    "curriculum": "Page /refonte/programme et téléchargement CSV ; dix niveaux et cinq domaines issus du fichier Programme cible, sans inventer de cours.",
+    "libraries": {
+      "source": "https://kodingschools.com/fr/#Librariesfr",
+      "observed": "2026-10-01",
+      "count": 16,
+      "note": "Liste publique copiée dans le prototype avec filtres de ville ; pas de synchronisation automatique. URL Guéliz nettoyée de la concaténation de deux liens présente dans la source."
+    },
+    "about": "Mission : proposition éditoriale basée sur les échanges. Malik Bouachrine présenté comme dirigeant et cofondateur. Kawthar n’est pas présentée dans l’équipe actuelle selon la correction du fondateur, sans nier son rôle historique de cofondatrice.",
+    "team": "Noms, fonctions et portraits fournis par le fondateur le 1er octobre 2026. Jamila Bouselham : conception pédagogique ; Marouane Arrob : développement full stack ; Oualid Ait Aissa : data science et IA. Les portraits sont présentés dans la page Qui sommes-nous, pas sur l’accueil.",
+    "inwi": {
+      "location": "/refonte/partenariats#dir-iddik",
+      "source": "https://www.linkedin.com/posts/malik-bouachrine-04b69913_t%C3%A9moignages-koding-schools-classes-connect%C3%A9es-activity-7019740220363284480-buPt",
+      "note": "Projet pilote historique, 50 écoles et trois mois. Ne constitue pas une annonce de partenariat actuellement actif."
+    }
+  },
+  "integration": {
+    "scope": "Présentation et navigation locales. Aucun remplacement du WordPress en production.",
+    "connections": "Connexion, activation, contact, aide et contenus existants restent des liens vers le site actuel.",
+    "forms": "Le dialogue propose le contact réel ; aucun envoi de formulaire simulé.",
+    "activation": {
+      "entry": "Identifiants disponibles ? Oui : connexion directe. Non : langue choisie par l’école, puis produit WooCommerce.",
+      "withCredentials": "https://kodingschools.com/fr/access",
+      "withoutCredentials": {
+        "fr": "https://kodingschools.com/fr/manuel-fr/",
+        "en": "https://kodingschools.com/fr/manuel-en/"
+      },
+      "prices": {
+        "fr": "119 DH / année scolaire",
+        "en": "149 DH / année scolaire"
+      },
+      "boundary": "La refonte transmet le visiteur aux routes WordPress canoniques vérifiées le 1 octobre 2026. WooCommerce conserve panier, paiement, licences, coupons et abonnements. Aucun nouveau checkout ni appel direct à une API de paiement. Achat et activation connectée non exécutés pendant la vérification.",
+      "schoolSeats": "L’administrateur conserve l’activation des comptes pris en charge par l’école."
+    },
+    "dailyLogin": "https://kodingschools.com/fr/access ; lien direct, sans dialogue ni choix de langue.",
+    "homepageLinks": "Navigation et pied de page communs : Programme, Établissements, Témoignages, Nous connaître, Parents & licences, Contactez-nous, Connexion. Encart familles et partenariats en fin de page ; aucun bandeau d’activation en haut.",
+    "newPages": [
+      "/refonte/parents-licences",
+      "/refonte/partenariats",
+      "/refonte/qui-sommes-nous"
+    ]
+  },
+  "version": "v3-navigation",
+  "fonts": {
+    "family": "Montserrat",
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ],
+    "origin": "Polices locales de l’utilisateur, métadonnées de copyright vérifiées dans le fichier TTF",
+    "license": "fonts/OFL.txt"
+  },
+  "designReference": {
+    "skill": "frontend-design",
+    "source": "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
+    "use": "Lu et appliqué à la critique de composition et de typographie, sans installation globale."
+  },
+  "heroCta": {
+    "label": "Demander une présentation",
+    "foreground": "#FFFFFF",
+    "background": "#BD5200",
+    "hover": "#AF4900",
+    "contrast": 4.8,
+    "scope": "Hero uniquement ; orange plus soutenu pour texte blanc."
+  },
+  "partnerCarousel": {
+    "assets": "Logos sources conservés ; monochromie, taille visuelle et centrage gérés en CSS.",
+    "motion": "Défilement automatique continu à 72 px/s avec deux jeux identiques de logos pour une boucle sans saut ; flèches manuelles. Suspension au survol et au focus, désactivation pour le mouvement réduit."
+  },
+  "offerSystem": {
+    "content": "Dix niveaux et cinq domaines ; ressources d’une séance ; démonstration de lancement et guides/vidéos pour les enseignants. Aperçus graphiques éditoriaux, non captures de l’interface réelle.",
+    "motion": "Apparition de la section au défilement et transition des aperçus au survol ou à la sélection. Mouvement réduit respecté."
+  },
+  "programmeJourney": {
+    "content": "Extrait réel Blockly ; démonstrations éditoriales binaire, phishing, podcast et graphique. Bloc Mais aussi… : quatre exemples par domaine conservés depuis le programme cible avec leur niveau scolaire.",
+    "motion": "Apparition au défilement et transitions au changement de domaine ; onde du podcast animée brièvement à son ouverture, rejouable sans audio. Respect du mouvement réduit.",
+    "layout": "Panneau commun : explication et Mais aussi… à gauche, démonstration sur fond teinté à droite. Introduction centrée mentionnant le départ dès la 1re année primaire. Composition empilée sur téléphone.",
+    "programmingExamples": "4AP : électronique virtuelle (F5) ; 3AP : robotique virtuelle (E5) ; 6AP : HTML/CSS (H5) ; 3AC : application mobile avec IA (K5)."
+  },
+  "curriculumPath": {
+    "location": "/refonte/programme",
+    "content": "Dix niveaux : curriculumModules[0].progression ; chaque repère affiche les cinq domaines du niveau choisi, depuis les données du programme cible.",
+    "design": "Frise pétrole et or déplacée en tête de la page détaillée. Remplace la précédente barre de niveaux ; aucun second sélecteur de cycle.",
+    "motion": "Tracé à la première apparition et transitions entre niveaux ; réduction des mouvements respectée.",
+    "accessibility": "Dix onglets avec flèches/Home/End, panneau associé et focus visible."
+  },
+  "adaptedPath": {
+    "location": "/refonte#curriculum",
+    "content": "Bandeau compact sur le positionnement et le parcours adapté. Lien Explorez le programme cible complet.",
+    "motion": "Petit tracé de convergence animé à l’entrée ; réduction des mouvements respectée."
+  },
+  "lessonResources": {
+    "location": "/refonte#seance",
+    "course": "Introduction Algorithmes & programmes, cours Algorithme séquentiel AP 711 FR",
+    "sources": {
+      "seance/video-preparation.png": "https://www.youtube.com/watch?v=zZsFsP6izLs",
+      "seance/slides-programmer.png": "https://docs.google.com/presentation/d/e/2PACX-1vQa5LesJomO-kqu9bHEJyFeHs-RDJD597LYbhEiwPiqVhjiGjfJwU9Dc__CrVTejw/embed?start=false&loop=false&delayms=3000&slide=id.p2",
+      "seance/blockly-sequence.png": "https://kodingschools.com/wp-content/blockly/maze/text/C2L3/5/index.php?langue=fr",
+      "seance/cahier-programme.png": "https://drive.google.com/file/d/1zeZc9PmCwbcMB-n4km518XVDMxZPMp0D/preview"
+    },
+    "script": "https://drive.google.com/file/d/1p2PwCY6IQ3ZsYMQ6ZIq2BYtZxnd3PlkC/preview",
+    "verified": "Vidéo de préparation, première diapositive des 46 slides, labyrinthe Blockly et première page du cahier de 20 pages. Icône AIA originale récupérée dans son widget.",
+    "design": "Quatre supports réels visibles ensemble, première slide et première page du cahier. Aperçus locaux agrandissables uniquement : liens vers les supports connectés supprimés à la demande du fondateur. Symbole de lecture conservé pour identifier la vidéo. Icônes d’agrandissement attachées à chaque miniature, fermeture SVG centrée.",
+    "motion": "Arrivée décalée des quatre supports et redressement/élévation au survol. Respect du mouvement réduit.",
+    "accessibility": "Liens et boutons explicites, dialogue natif avec Échap et retour du focus, commandes du carrousel mobile. Aucun débordement de page à 390 px.",
+    "limit": "Supports complets derrière connexion : aucune navigation publique vers ces supports ; seul l’article public AIA reste lié.",
+    "workbook": "Cahier papier, imprimable, pour récapituler l’essentiel des cours.",
+    "practice": "Rubrique Pratique & projets : activités ciblées pour s’entraîner et surtout projets pour créer et mobiliser les acquis. Capture Blockly conservée et légendée comme exemple d’activité ciblée."
+  },
+  "schoolDeployment": {
+    "location": "/refonte#ecoles",
+    "content": "Positionner les élèves ; former l’administrateur et les enseignants ; configurer les classes et les comptes ; activer les comptes et démarrer les séances. Prérequis confirmés par le fondateur.",
+    "design": "Frise horizontale sur ordinateur, verticale sur mobile. Pétrole et or, équipements illustrés par pictogrammes SVG.",
+    "motion": "Tracé et étapes apparaissent à la première entrée ; animation finie, désactivée pour prefers-reduced-motion.",
+    "interaction": "Le bouton Parlons de votre école ouvre le dialogue de démonstration déjà utilisé dans le prototype."
+  },
+  "mediaCoverage": {
+    "updated": "2026-10-01",
+    "assets": "Logos existants 2m.png, h24.jpg et maghreb-voices.png, sources conservées dans assets.",
+    "content": "Titres, intervenants, dates et liens vidéo repris de la section existante.",
+    "design": "Bande éditoriale compacte, logos en gris, trois colonnes sur ordinateur et lignes sur mobile ; apparition progressive et réaction au survol, prefers-reduced-motion respecté.",
+    "externalLinks": "Lecture sur YouTube dans un nouvel onglet, indiquée dans chaque nom accessible."
+  },
+  "blogPreview": {
+    "updated": "2026-10-01",
+    "citoyennete": "https://kodingschools.com/wp-content/uploads/2025/03/citoyennete-digitale-scaled.jpg",
+    "programmation": "https://kodingschools.com/wp-content/uploads/2025/03/une-photo-realiste-de-blog-sous-le-theme-_-pourquoi-enseigner-la-programmation-des-le-plus-jeune-age-_-met-laccent-sur-des-enfants-qui-sont-entrain-de-coder-sur-le-pc-en-montrant-le-code-sans-texte.jpg",
+    "aia": "Réutilisation de /refonte/aia-teacher.png, personnage original de la plateforme.",
+    "notes": "Illustrations des articles, pas des photographies documentaires d’écoles clientes. Titres et liens repris des pages publiques. Sélection statique dans le prototype, sans intégration WordPress pour le moment.",
+    "motion": "Apparition progressive, zoom discret et flèches au survol ; réduction des mouvements respectée."
+  },
+  "orangeControls": {
+    "updated": "2026-10-01",
+    "background": "#bd5200",
+    "foreground": "#ffffff",
+    "contrast": 4.8,
+    "hoverBackground": "#af4900",
+    "hoverContrast": 5.56,
+    "scope": "Boutons et pictogrammes de commande orange dans les cinq pages de la refonte. Orange de marque conservé pour les accents décoratifs.",
+    "reference": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+  },
+  "footerSocial": {
+    "linkedin": "https://ma.linkedin.com/company/koding-schools",
+    "youtube": "https://www.youtube.com/@kodingschools479",
+    "source": "LinkedIn fourni par Malik ; YouTube déjà présent dans le site. Liens publics ouverts dans un nouvel onglet, avec indication accessible."
+  }
+}

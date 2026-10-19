@@ -1,0 +1,13 @@
+.section{background:#123a3d;color:#fff;padding:55px 0 52px}
+.inner{width:min(1280px,calc(100% - 96px));margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:65px;align-items:center}
+.copy h2{color:#fff!important;font-size:clamp(34px,3.5vw,48px)!important;line-height:1.16!important;letter-spacing:-.045em!important;font-weight:500!important}.copy h2>span{color:#f8b677}
+.copy p{font-size:17px;line-height:1.8;max-width:580px;color:#c7dbd2;margin-top:19px!important}
+.actions{display:flex;flex-direction:column;align-items:center;gap:15px}
+.actions button{background:var(--cta-orange);color:#fff;border:1px solid var(--cta-orange);display:inline-flex;align-items:center;justify-content:center;gap:23px;padding:16px 21px;min-height:56px;font-size:15px;font-weight:600;border-radius:5px;transition:background .3s,border-color .3s,transform .3s;white-space:nowrap}
+.actions button:hover{background:var(--cta-orange-hover);border-color:var(--cta-orange-hover);transform:translateY(-2px)}.actions button:active{transform:translateY(0)}.actions button svg{flex-shrink:0;transition:transform .3s}.actions button:hover svg{transform:translateX(4px)}
+.actions>a{display:inline-flex;gap:13px;align-items:center;min-height:44px;font-size:13px;color:#deebe5!important}.actions>a:hover{text-decoration:underline;text-underline-offset:5px}.actions :is(a,button):focus-visible{outline:2px solid #fff!important;outline-offset:6px!important}
+.section[data-visible=true] .copy{animation:reveal .7s both}.section[data-visible=true] .actions{animation:reveal .7s .12s both}
+@keyframes reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1000px){.inner{width:calc(100% - 64px);gap:35px}.copy h2{font-size:35px!important}.copy h2 br{display:none}.copy p{font-size:16px}.actions button{font-size:14px;gap:16px;padding:15px 17px}.actions>a{font-size:12px}}
+@media(max-width:700px){.section{padding:35px 0 27px}.inner{width:calc(100% - 40px);grid-template-columns:1fr;gap:23px}.copy h2{font-size:33px!important}.copy p{font-size:15px;line-height:1.75;margin-top:16px!important}.actions{align-items:stretch;gap:10px}.actions button{font-size:14px;white-space:normal;justify-content:space-between;padding:15px 18px}.actions>a{align-self:center;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.section *{animation:none!important;transition:none!important}.actions button:hover,.actions button:hover svg{transform:none}}

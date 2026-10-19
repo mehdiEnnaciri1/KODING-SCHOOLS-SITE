@@ -1,0 +1,33 @@
+.section{background:#123a3d;color:#fff;padding:48px 0 38px}
+.inner{width:calc(100% - 96px);max-width:1280px;margin:auto}
+.heading{text-align:center;margin-bottom:34px}
+.heading h2{font-size:clamp(32px,3.3vw,46px)!important;font-weight:500!important;letter-spacing:-.045em!important;color:#fff!important;line-height:1.15!important}
+.heading h2 span{color:#f3b567}
+.timeline{list-style:none!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin:0!important;padding:0!important;position:relative}
+.timeline::before,.timeline::after{content:"";position:absolute;left:23px;right:calc(25% - 1px);height:1px;top:23px;background:#567671}
+.timeline::after{background:#e8b477;transform:scaleX(0);transform-origin:left;height:2px}
+.step{position:relative;z-index:1;min-width:0}
+.marker{width:47px;height:47px;display:grid;place-items:center;background:#123a3d;border:1px solid #789489;color:#f8c383;font-size:15px;font-weight:500;border-radius:50%;box-shadow:0 0 0 7px #123a3d}
+.copy{padding-top:21px;padding-right:12px}
+.copy h3{color:#fff!important;font-size:22px!important;font-weight:500!important;line-height:1.3!important;letter-spacing:-.03em!important}
+.copy p{font-size:15px;color:#cfddd4;line-height:1.7;margin-top:10px!important;max-width:265px}
+.bottom{margin-top:29px;padding-top:24px;border-top:1px solid #69897a55;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.equipmentTitle{font-size:13px;font-weight:500;color:#acc9bb;margin-bottom:12px!important}
+.equipment ul{display:flex;flex-wrap:wrap;gap:14px 26px;list-style:none!important;padding:0!important;margin:0!important}
+.equipment li{display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.4;color:#f2f7f3}
+.equipment svg{color:#9fcec0;flex-shrink:0}
+.homeNote{font-size:13px;color:#b9d0c3;line-height:1.6;margin-top:14px!important}
+.contact{display:flex;align-items:center;justify-content:center;gap:25px;flex-shrink:0;border:1px solid #aac5b8;border-radius:5px;background:transparent;color:#fff;font-size:15px!important;min-height:50px;padding:12px 19px;transition:background .25s,border-color .25s}
+.contact:hover{background:#234d4e;border-color:#fff}.contact svg{transition:transform .25s}.contact:hover svg{transform:translateX(4px)}
+.contact:focus-visible{outline:3px solid #ffd09b!important;outline-offset:5px}
+.section[data-visible=true] .timeline::after{animation:drawRoute 1.7s .15s cubic-bezier(.3,.7,.3,1) both}
+.section[data-visible=true] .copy{animation:stepIn .6s var(--delay) both}
+.section[data-visible=true] .marker{animation:markStep .6s var(--delay) both}
+.step:nth-child(1){--delay:.1s}.step:nth-child(2){--delay:.45s}.step:nth-child(3){--delay:.8s}.step:nth-child(4){--delay:1.15s}
+@keyframes drawRoute{to{transform:scaleX(1)}}
+@keyframes stepIn{from{opacity:.2;transform:translateY(13px)}to{opacity:1;transform:none}}
+@keyframes markStep{from{border-color:#789489;background:#123a3d}to{border-color:#efbb80;background:#244e4c}}
+@media(max-width:1000px){.inner{width:calc(100% - 64px)}.timeline{gap:22px}.copy{padding-right:0}.copy h3{font-size:20px!important}.copy p{font-size:14px}.bottom{gap:20px}.equipment ul{gap:13px 18px}.equipment li{font-size:13px}.contact{font-size:14px!important;gap:16px;padding-inline:14px}}
+@media(max-width:700px){.section{padding:35px 0 30px}.inner{width:calc(100% - 40px)}.heading{text-align:left;margin-bottom:26px}.heading h2{font-size:33px!important;max-width:450px}.timeline{display:flex;flex-direction:column;gap:23px}.timeline::before,.timeline::after{left:19px;top:20px;bottom:20px;right:auto;width:1px;height:auto}.timeline::after{width:2px;transform:scaleY(0);transform-origin:top}.section[data-visible=true] .timeline::after{animation-name:drawVertical}.step{display:grid;grid-template-columns:40px 1fr;gap:19px}.marker{width:40px;height:40px;font-size:13px;box-shadow:0 0 0 5px #123a3d}.copy{padding:4px 0 0}.copy h3{font-size:21px!important}.copy p{font-size:14px;max-width:430px;margin-top:6px!important;line-height:1.65}.bottom{display:block;margin-top:26px;padding-top:22px}.equipmentTitle{font-size:13px}.equipment ul{gap:13px 20px}.equipment li{font-size:14px}.homeNote{margin-top:14px!important;font-size:13px}.contact{margin-top:23px;min-height:48px;font-size:14px!important;gap:24px}.equipment svg{width:20px;height:20px}}
+@keyframes drawVertical{to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.section *,.section *::before,.section *::after{animation:none!important;transition:none!important}.timeline::after{transform:none}.marker{border-color:#efbb80;background:#244e4c}}

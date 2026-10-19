@@ -1,0 +1,8 @@
+.mark{overflow:visible;transform-origin:50% 65%;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.eyes{transform-box:fill-box;transform-origin:center;animation:blink 6.2s 2s infinite}
+.accents{transform-box:fill-box;transform-origin:bottom center;animation:hello .8s .4s both}
+a:hover .mark,a:focus-visible .mark{transform:rotate(-9deg) translateY(-2px)}
+a:hover .accents,a:focus-visible .accents{animation:hello .75s both}
+@keyframes blink{0%,43%,49%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}
+@keyframes hello{0%{transform:scale(.7) rotate(-15deg);opacity:.3}45%{transform:scale(1.15) rotate(8deg);opacity:1}100%{transform:scale(1) rotate(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){.mark,.mark *{animation:none!important;transition:none!important}a:hover .mark,a:focus-visible .mark{transform:none}}

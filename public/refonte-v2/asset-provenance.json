@@ -1,0 +1,19 @@
+{
+  "source": "WhatsApp Image 2026-10-01 at 17.04.41.jpeg, fournie par Malik",
+  "method": "Outil image_gen intégré, extraction/recréation fidèle sur fond transparent ; aucune édition des assets V1.",
+  "assets": [
+    "hero.png",
+    "learning.png",
+    "thinking.png"
+  ],
+  "palette": {
+    "petrol": "#123A3D",
+    "teal": "#167D83",
+    "orange": "#F7941D",
+    "white": "#FFFFFF",
+    "darkGrey": "#343A40"
+  },
+  "logo": "SVG adapté de la référence dans companion-mark.tsx pour animer séparément les yeux et les accents. Wordmark Montserrat de V1 conservé.",
+  "animation": "Hero : animation d’arrivée existante, inclinaison au pointeur et au défilement ; logo : clignement et réaction au survol ; vignettes : entrée et flottement discret. prefers-reduced-motion respecté.",
+  "prompts": "outputs/refonte-v2/image-prompts.json"
+}
