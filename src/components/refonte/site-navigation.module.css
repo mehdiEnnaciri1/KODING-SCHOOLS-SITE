@@ -8,3 +8,5 @@
 .lang{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:500;color:#4a6365;white-space:nowrap}.lang strong{color:#0e2526;font-weight:700}.lang a{color:#4a6365;min-height:44px;display:inline-flex;align-items:center}.lang a:hover{color:#00716f;text-decoration:underline}
 [data-version="v2"] .actions .login{background:#0e2526;color:#ffffff;border-radius:999px;padding:10px 22px;font-weight:700}[data-version="v2"] .actions .login:hover{background:#00716f}
 @media(max-width:1180px){[data-version="v2"] .lang{display:none}[data-version="v2"] .menu{border-radius:999px;border-color:#4a6365}}
+
+.mobileLang{display:flex;gap:6px;align-items:center;padding:14px 0 4px;font-size:15px;color:#4a6365}.mobileLang strong{color:#0e2526;font-weight:700}.mobileLang a{color:#4a6365;text-decoration:none;font-weight:500}

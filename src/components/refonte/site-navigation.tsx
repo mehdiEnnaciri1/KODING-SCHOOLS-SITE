@@ -70,8 +70,9 @@ function V2SiteHeader() {
         <a href={BLOG_URL}>Blog</a>
         <a href={`${homeHref}#temoignage`}>Témoignages</a>
         <a href={pageHref("qui-sommes-nous")}>Qui sommes-nous ?</a>
-        <a href={LOGIN_URL}>Connexion</a>
         <a className={s.mobileContact} href="/contact?profil=ecole">Demander une démo <span aria-hidden="true">↗</span></a>
+        <a href={LOGIN_URL}>Connexion</a>
+        <span className={s.mobileLang}><strong aria-current="true">FR</strong> / <a href="https://kodingschools.com/en/" hrefLang="en" lang="en">EN</a></span>
       </nav>}
     </header>
   </>;

@@ -3,7 +3,7 @@
 /* Charte Koding Schools 2026 — tokens (voir public/charte/tokens.json) */
 :root{
   --firefly:#0e2526;--medium-turquoise:#3eccc5;--teal:#009390;--orange-peel:#ff9c13;--mint-cream:#f0fffe;--reddish:#c43b48;
-  --surface:#ffffff;--surface-mint:var(--mint-cream);--surface-turquoise-pale:#d8f5f3;--surface-orange-pale:#fff1dc;--surface-inverse:var(--firefly);
+  --surface:#ffffff;--surface-mint:var(--mint-cream);--surface-turquoise-pale:#d8f5f3;--surface-inverse:var(--firefly);
   --ink:var(--firefly);--ink-muted:#4a6365;--ink-inverse:#ffffff;--link:#00716f;--line:#cfe3e1;--line-strong:var(--ink-muted);--focus-ring:var(--firefly);
   --font-sans:"Montserrat","Segoe UI",system-ui,-apple-system,sans-serif;
   --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-32:128px;
