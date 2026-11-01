@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Frame, S, st } from "./page-kit";
+import a from "./ecoles-page.module.css";
 
 const steps = [
   ["01", "Positionner", "Les élèves, pour choisir un programme adapté à leurs acquis."],
@@ -27,6 +28,15 @@ const faq = [
 
 export function EcolesPage() {
   const [openFaq, setOpenFaq] = useState(0);
+  const deploy = useRef<HTMLElement>(null);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const node = deploy.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setSeen(true); observer.disconnect(); } }, { threshold: 0.25 });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
   const pill = st("color:#ffffff;border:1px solid #4a6365;border-radius:999px;padding:8px 16px;font-size:15px;font-weight:500;text-decoration:none");
   const chip = st("border:1px solid #4a6365;border-radius:999px;padding:8px 16px;font-size:15px;font-weight:500");
   const light = st("background:#ffffff;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:4px");
@@ -46,14 +56,15 @@ export function EcolesPage() {
       </div>
     </section>
 
-    <section id="deploiement" style={st("background:#ffffff")}>
+    <section id="deploiement" ref={deploy} className={seen ? a.on : undefined} style={st("background:#ffffff")}>
       <div style={{ ...S.wrap, ...st("padding:96px 24px;display:flex;flex-direction:column;gap:48px") }}>
-        <h2 style={S.h2}>Le déploiement, en quatre étapes.</h2>
-        <ol style={st("list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px")}>
-          {steps.map(([n, title, text]) => <li key={n} style={st("display:flex;flex-direction:column;gap:12px;padding-top:24px;border-top:2px solid #3eccc5")}>
-            <span style={st("font-size:13px;font-weight:500;color:#00716f")}>{n}</span>
-            <h3 style={st("margin:0;font-size:24px;line-height:32px;font-weight:700")}>{title}</h3>
-            <p style={st("margin:0;font-size:16px;line-height:26px;color:#4a6365")}>{text}</p>
+        <h2 className={a.title} style={S.h2}>Le déploiement, en quatre étapes.</h2>
+        <ol className={a.steps}>
+          {steps.map(([n, title, text], i) => <li key={n} className={a.step} style={{ "--i": i } as CSSProperties}>
+            <span className={a.line} aria-hidden="true" /><span className={a.dot} aria-hidden="true" />
+            <span className={a.num}>{n}</span>
+            <h3 className={a.stepTitle}>{title}</h3>
+            <p className={a.stepText}>{text}</p>
           </li>)}
         </ol>
       </div>

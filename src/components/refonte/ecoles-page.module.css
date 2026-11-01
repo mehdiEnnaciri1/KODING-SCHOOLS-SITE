@@ -1,0 +1,22 @@
+/* Déploiement en quatre étapes : tracé des lignes à l'entrée dans l'écran */
+.title{opacity:0;transform:translateY(16px)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px}
+.step{position:relative;display:flex;flex-direction:column;gap:12px;padding-top:24px}
+.step::before,.line{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.step::before{background:#cfe3e1}
+.line{background:#3eccc5;transform:scaleX(0);transform-origin:left}
+.dot{position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:#ff9c13;transform:scale(0)}
+.num,.stepTitle,.stepText{opacity:0;transform:translateY(14px)}
+.num{font-size:13px;font-weight:500;color:#00716f}
+.stepTitle{margin:0;font-size:24px;line-height:32px;font-weight:700}
+.stepText{margin:0;font-size:16px;line-height:26px;color:#4a6365}
+.on .title{animation:rise .6s ease-out both}
+.on .line{animation:draw .9s cubic-bezier(.3,.7,.3,1) calc(var(--i) * .25s) both}
+.on .dot{animation:pop .4s ease-out calc(var(--i) * .25s) both}
+.on .num{animation:rise .6s ease-out calc(.45s + var(--i) * .25s) both}
+.on .stepTitle{animation:rise .6s ease-out calc(.45s + var(--i) * .25s) both}
+.on .stepText{animation:rise .6s ease-out calc(.6s + var(--i) * .25s) both}
+@keyframes draw{to{transform:scaleX(1)}}
+@keyframes pop{to{transform:scale(1)}}
+@keyframes rise{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.title,.num,.stepTitle,.stepText{opacity:1;transform:none}.line{transform:none}.dot{transform:none}.on *{animation:none!important}}
