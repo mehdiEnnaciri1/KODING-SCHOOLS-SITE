@@ -7,6 +7,6 @@ import s from "./koding-home.module.css";
 export function Brand({ href = "#accueil" }: { href?: string }) {
   const { homeHref } = useHomeVersion();
   return <a className={s.brand} href={href === "/refonte" ? homeHref : href} aria-label="Koding Schools, accueil">
-    <img className={s.brandLogo} src="/charte/logos/koding-logo-principal.svg" alt="Koding Schools" width={135} height={48} />
+    <img className={s.brandLogo} src="/charte/logos/koding-logo-anime.svg" alt="Koding Schools" width={135} height={48} />
   </a>;
 }

@@ -5,6 +5,8 @@ import { OfferSystem } from "./offer-system";
 import { SiteHeader, SiteFooter } from "./site-navigation";
 import { KobotScene } from "./kobot-scene";
 import { ProgrammeJourney } from "./programme-journey";
+import { AdaptedPath } from "./adapted-path";
+import { ProgrammeDomains } from "./programme-domains";
 import { LessonResources } from "./lesson-resources";
 import { SchoolDeployment } from "./school-deployment";
 import { SchoolTestimony } from "./school-testimony";
@@ -56,8 +58,11 @@ export function KodingHome({ version = "v1" }: { version?: HomeVersion }) {
         <div className={s.heroVisual}>{version === "v2" ? <KobotScene src="/refonte-v2/hero.png" alt="Le nouveau compagnon Koding Schools, au visage blanc, salue les visiteurs" floating /> : <KobotScene />}</div>
       </div></section>
       {version === "v1" && <OfferSystem />}
-      <section id="programme" className={version === "v2" ? `${s.programme} ${s.programmeV2}` : s.programme} aria-labelledby="programme-title"><div className={s.wrap}><div className={s.programmeHeading}><h2 id="programme-title">Ce que vos élèves vont apprendre.</h2><p>Dès la 1re année primaire, cinq domaines pour apprendre à programmer, comprendre l’IA, créer et développer son esprit critique.</p></div><ProgrammeJourney />
+      {version === "v2" ? <ProgrammeDomains /> : <>
+      <section id="programme" className={s.programme} aria-labelledby="programme-title"><div className={s.wrap}><div className={s.programmeHeading}><h2 id="programme-title">Ce que vos élèves vont apprendre.</h2><p>Dès la 1re année primaire, cinq domaines pour apprendre à programmer, comprendre l’IA, créer et développer son esprit critique.</p></div><ProgrammeJourney />
       </div></section>
+      </>}
+      {version === "v1" && <AdaptedPath />}
       <LessonResources />
       <SchoolDeployment onContact={() => setModal("demo")} />
       <SchoolTestimony />

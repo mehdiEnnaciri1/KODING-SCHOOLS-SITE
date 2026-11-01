@@ -54,3 +54,15 @@
 .heroVisual{height:min(56vh,525px)!important;min-height:260px}
 .hero h1{font-size:clamp(36px,min(5vw,7.5vh),64px)}
 @media(max-width:1180px){.hero{min-height:calc(100svh - 80px)}}
+
+/* Maquette Accueil Charte 2026 : halo turquoise, bouton secondaire en pilule, logo animé */
+.heroVisual::before{inset:6%;border-radius:50%;background:radial-gradient(circle,#3eccc5 0%,#3eccc5 30%,rgba(62,204,197,0) 70%);opacity:.55;transform:none}
+.hero .lightLink{border:1.5px solid #fff;border-radius:999px;padding:14px 26px;font-size:16px;font-weight:700;color:#fff!important;min-height:0;text-decoration:none}
+.hero .lightLink:hover{background:#fff;color:#0e2526!important;text-decoration:none}
+.heroLanguages{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:6px;margin-top:8px}
+.heroLanguages>span{font-size:14px;line-height:22px;color:#d8f5f3}
+.heroLanguages strong{font-size:14px;line-height:22px;font-weight:700;letter-spacing:0}
+.heroLanguages i{color:#fff;margin-inline:3px}
+.brandLogo{transform-origin:20% 60%;transition:transform .3s ease}
+.brandLogo:hover{transform:rotate(-4deg) scale(1.03)}
+@media(prefers-reduced-motion:reduce){.brandLogo{transition:none}.brandLogo:hover{transform:none}}
