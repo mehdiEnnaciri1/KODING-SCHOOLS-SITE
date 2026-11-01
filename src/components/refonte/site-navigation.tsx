@@ -7,7 +7,7 @@ import { Brand } from "./brand";
 import { useHomeVersion } from "./home-version";
 import s from "./site-navigation.module.css";
 
-const BLOG_URL = "https://kodingschools.com/fr/blog/";
+const BLOG_URL = "/blog";
 
 function V2SiteHeader() {
   const { homeHref, pageHref } = useHomeVersion();
@@ -20,7 +20,7 @@ function V2SiteHeader() {
   const programmeItems = [
     { href: pageHref("programme"), label: "Curriculum cible", detail: "Les dix niveaux et les cinq domaines" },
     { href: `${homeHref}#seance`, label: "Une séance", detail: "Ce que voient les enseignants et les élèves" },
-    { href: `${homeHref}#ecoles`, label: "Déploiement", detail: "Comment démarrer dans votre école" },
+    { href: "/ecoles", label: "Déploiement", detail: "Comment démarrer dans votre école" },
   ];
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function V2SiteHeader() {
         <Brand href={homeHref} />
         <nav className={s.desktop} aria-label="Navigation principale">
           <button ref={programmeButton} onClick={() => setProgrammeOpen(!programmeOpen)} aria-expanded={programmeOpen} aria-controls="programme-navigation">Le programme <span aria-hidden="true">⌄</span></button>
-          <a href={`${homeHref}#ecoles`}>Pour les écoles</a>
+          <a href="/ecoles" aria-current={path === "/ecoles" ? "page" : undefined}>Pour les écoles</a>
           <a href={pageHref("parents-licences")} aria-current={path === pageHref("parents-licences") ? "page" : undefined}>Parents & licences</a>
           <a href={pageHref("partenariats")} aria-current={path === pageHref("partenariats") ? "page" : undefined}>Partenariats</a>
           <a href={BLOG_URL}>Blog</a>
@@ -65,13 +65,13 @@ function V2SiteHeader() {
         <a className={s.mobileParents} href={pageHref("parents-licences")}>Parents & licences <span>Activer un compte · Trouver une librairie</span></a>
         <span className={s.mobileGroup}>Le programme</span>
         {programmeItems.map(item => <a className={s.mobileSub} key={item.href} href={item.href}>{item.label}</a>)}
-        <a href={`${homeHref}#ecoles`}>Pour les écoles</a>
+        <a href="/ecoles">Pour les écoles</a>
         <a href={pageHref("partenariats")}>Partenariats</a>
         <a href={BLOG_URL}>Blog</a>
         <a href={`${homeHref}#temoignage`}>Témoignages</a>
         <a href={pageHref("qui-sommes-nous")}>Qui sommes-nous ?</a>
         <a href={LOGIN_URL}>Connexion</a>
-        <a className={s.mobileContact} href="https://kodingschools.com/fr/contact/">Demander une démo <span aria-hidden="true">↗</span></a>
+        <a className={s.mobileContact} href="/contact?profil=ecole">Demander une démo <span aria-hidden="true">↗</span></a>
       </nav>}
     </header>
   </>;

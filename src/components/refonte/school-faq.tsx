@@ -24,7 +24,7 @@ export function SchoolFaq({ illustration }: { illustration?: ReactNode }) {
         <span className={s.rule} aria-hidden="true" />
         <h2 id="faq-title">Les questions<br />{" "}des écoles<span>.</span></h2>
         <p>Les repères pour préparer<br className={s.desktopBreak} /> votre première année.</p>
-        <div className={s.contact}><p>Une question sur votre école ?</p><a href="https://kodingschools.com/fr/contact/">Contactez-nous <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></a></div>
+        <div className={s.contact}><p>Une question sur votre école ?</p><a href="/contact?profil=ecole">Contactez-nous <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></a></div>
         {illustration}
       </header>
       <div className={s.accordion}>

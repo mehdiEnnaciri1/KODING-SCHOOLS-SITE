@@ -41,6 +41,6 @@ export function ActivationFlow() {
       </div>
       <p className={s.note}>Après l’achat, le code est disponible en PDF et envoyé par e-mail. Vous avez déjà un code ? Conservez-le et demandez les identifiants à votre école.</p>
     </>}
-    <a className={s.help} href="https://kodingschools.com/contact-it/">Besoin d’aide ? Contacter le support</a>
+    <a className={s.help} href="/contact?profil=parent">Besoin d’aide ? Contacter le support</a>
   </div>;
 }

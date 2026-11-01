@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { useMarquee } from "./use-marquee";
 import { mediaAppearances, mediaLogos } from "@/domain/refonte/media";
 import { useHomeVersion } from "./home-version";
 import s from "./media-coverage.module.css";
@@ -9,16 +10,8 @@ import s from "./media-coverage.module.css";
 export function MediaCoverage() {
   const { version } = useHomeVersion();
   const section = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (!section.current) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setVisible(true); observer.disconnect(); }
-    }, { threshold: 0.15 });
-    observer.observe(section.current);
-    return () => observer.disconnect();
-  }, []);
+  const marks = useRef<HTMLUListElement>(null);
+  const visible = useMarquee(section, marks, 48, 0.15);
 
   return <section id="medias" ref={section} data-visible={visible} className={s.section} aria-labelledby="press-title">
     <div className={s.inner}>
@@ -38,14 +31,14 @@ export function MediaCoverage() {
           </a>
         </li>)}
       </ul>
-      {version === "v2" && <ul className={s.pressMarks} aria-label="Dans les médias : Koding Schools et nos origines">
-        {mediaLogos.map(media => <li key={media.id} data-media={media.id}>
-          <a href={media.href} target="_blank" rel="noopener noreferrer" aria-label={`Voir le contenu ${media.name} : ${media.content} (nouvel onglet)`}>
+      {version === "v2" && <ul className={s.pressMarks} ref={marks} aria-label="Dans les médias : Koding Schools et nos origines">
+        {[0, 1].map(copy => mediaLogos.map(media => <li key={`${copy}-${media.id}`} data-media={media.id} aria-hidden={copy === 1 ? true : undefined}>
+          <a href={media.href} target="_blank" rel="noopener noreferrer" tabIndex={copy === 1 ? -1 : undefined} aria-label={`Voir le contenu ${media.name} : ${media.content} (nouvel onglet)`}>
             <Image src={`/refonte-v2/media/${media.logo}`} alt="" width={160} height={68} unoptimized />
             <span className={s.externalMark} aria-hidden="true">↗</span>
             {media.id === "medias24" && <span className={s.archiveNote}>Koding Kids · 2017</span>}
           </a>
-        </li>)}
+        </li>))}
       </ul>}
     </div>
   </section>;
