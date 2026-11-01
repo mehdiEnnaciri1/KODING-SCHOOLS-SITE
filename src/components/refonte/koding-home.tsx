@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { PartnerCarousel } from "./partner-carousel";
 import { OfferSystem } from "./offer-system";
 import { SiteHeader, SiteFooter } from "./site-navigation";
 import { KobotScene } from "./kobot-scene";
 import { ProgrammeJourney } from "./programme-journey";
-import { AdaptedPath } from "./adapted-path";
 import { LessonResources } from "./lesson-resources";
 import { SchoolDeployment } from "./school-deployment";
 import { SchoolTestimony } from "./school-testimony";
@@ -14,7 +12,6 @@ import { MediaCoverage } from "./media-coverage";
 import { BlogPreview } from "./blog-preview";
 import { SchoolFaq } from "./school-faq";
 import { ParentsGateway } from "./parents-gateway";
-import { PartnershipGateway } from "./partnership-gateway";
 import { HomeClosing } from "./home-closing";
 import { HomeVersionProvider, type HomeVersion } from "./home-version";
 import { CompanionSprite } from "./companion-sprite";
@@ -58,19 +55,16 @@ export function KodingHome({ version = "v1" }: { version?: HomeVersion }) {
         <div className={s.heroCopy}><p className={s.heroContext}>{version === "v2" ? "Du primaire à la première année du lycée" : "De la première année du primaire au lycée"}</p><h1 id="hero-title">Le numérique et l’IA,<br className={s.desktopBreak} /> au programme<br className={s.desktopBreak} /> de votre école.</h1><p className={s.heroLead}>{version === "v2" ? "Un programme clé en main, des cours prêts à l’emploi et une plateforme pour aider vos enseignants à faire découvrir le numérique, la programmation et l’IA chaque semaine." : "Un programme complet, une plateforme d’apprentissage et une formation pour vos enseignants. Les cours et les activités sont prêts pour une séance de numérique chaque semaine."}</p><div className={s.heroActions}><button className={s.orangeButton} onClick={() => setModal("demo")}>{version === "v2" ? "Demander une démo" : "Demander une présentation"}</button><a className={s.lightLink} href="#seance"><Icon name="play" size={18} /> Explorer une séance</a></div><div className={s.heroLanguages}><span>Le programme est disponible en</span><strong>Français <i aria-hidden="true">/</i> Anglais</strong></div></div>
         <div className={s.heroVisual}>{version === "v2" ? <KobotScene src="/refonte-v2/hero.png" alt="Le nouveau compagnon Koding Schools, au visage blanc, salue les visiteurs" floating /> : <KobotScene />}</div>
       </div></section>
-      <PartnerCarousel />
       {version === "v1" && <OfferSystem />}
       <section id="programme" className={version === "v2" ? `${s.programme} ${s.programmeV2}` : s.programme} aria-labelledby="programme-title"><div className={s.wrap}><div className={s.programmeHeading}><h2 id="programme-title">Ce que vos élèves vont apprendre.</h2><p>Dès la 1re année primaire, cinq domaines pour apprendre à programmer, comprendre l’IA, créer et développer son esprit critique.</p></div><ProgrammeJourney />
       </div></section>
-      <AdaptedPath illustration={version === "v2" ? <CompanionSprite pose="learning" /> : undefined} />
       <LessonResources />
       <SchoolDeployment onContact={() => setModal("demo")} />
       <SchoolTestimony />
       <MediaCoverage />
-      <BlogPreview />
-      <SchoolFaq illustration={version === "v2" ? <CompanionSprite pose="thinking" /> : undefined} />
       <ParentsGateway />
-      <PartnershipGateway />
+      <SchoolFaq illustration={version === "v2" ? <CompanionSprite pose="thinking" /> : undefined} />
+      <BlogPreview />
       <HomeClosing onPresentation={() => setModal("demo")} />
     </main>
     <SiteFooter />

@@ -40,7 +40,7 @@ export function ParentsGateway() {
           <span className={s.start}>Commencer l’activation <span className={s.activationArrow}><Arrow /></span></span>
         </a>
         <div className={s.otherServices}>
-          <a href={`${parentsHref}#librairies`} aria-labelledby="parent-bookshop-title"><span className={s.serviceIcon}><ServiceIcon name="bookshop" /></span><div><h3 id="parent-bookshop-title">Trouver une librairie</h3><p>Les points de vente partenaires,<br className={s.desktopBreak} /> près de chez vous ou en ligne.</p></div><span className={s.linkArrow}><Arrow /></span></a>
+          <a href={`/parents/librairies`} aria-labelledby="parent-bookshop-title"><span className={s.serviceIcon}><ServiceIcon name="bookshop" /></span><div><h3 id="parent-bookshop-title">Trouver une librairie</h3><p>Les points de vente partenaires,<br className={s.desktopBreak} /> près de chez vous ou en ligne.</p></div><span className={s.linkArrow}><Arrow /></span></a>
           <a href={`${parentsHref}#aide`} aria-labelledby="parent-help-title"><span className={s.serviceIcon}><ServiceIcon name="help" /></span><div><h3 id="parent-help-title">Obtenir de l’aide</h3><p>Identifiants, code de licence<br className={s.desktopBreak} /> ou accès au compte.</p></div><span className={s.linkArrow}><Arrow /></span></a>
         </div>
       </nav>
