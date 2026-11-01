@@ -1,16 +1,16 @@
-.section{padding:0 0 43px;background:#fff;color:#123a3d}
-.inner{width:min(1280px,calc(100% - 96px));margin-inline:auto;background:#f8dfc0;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:40px;padding:31px 36px 33px;border-radius:5px;position:relative;overflow:hidden}
-.inner::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4px;background:#bc5e2c;transform-origin:top}
-.copy{min-width:0}.label{font-size:13px;line-height:1.5;font-weight:500;color:#805235;margin-bottom:10px!important}
-.copy h2{font-size:clamp(28px,2.7vw,37px)!important;line-height:1.18!important;letter-spacing:-.04em!important;font-weight:500!important}
-.description{font-size:15px;color:#4e6154;line-height:1.7;margin-top:12px!important;max-width:650px}
-.link{display:flex;align-items:center;gap:29px;font-size:17px;font-weight:500;line-height:1.45;min-height:90px;padding-left:34px;border-left:1px solid #123a3d33}
-.arrow{width:52px;height:52px;display:grid;place-items:center;flex-shrink:0;background:#123a3d;color:#fff;border-radius:50%;transition:background .35s,transform .35s}
-.arrow svg{transition:transform .35s}.link:hover .arrow,.link:focus-visible .arrow{background:#285a55;transform:rotate(-35deg)}.link:hover .arrow svg{transform:translateX(2px)}
-.link:focus-visible{outline:2px solid #123a3d!important;outline-offset:8px!important;border-radius:2px}
+.section{padding:0 0 43px;background:#fff;color:#0e2526}
+.inner{width:min(1280px,calc(100% - 96px));margin-inline:auto;background:#ff9c13;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:40px;padding:31px 36px 33px;border-radius:5px;position:relative;overflow:hidden}
+.inner::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4px;background:#ff9c13;transform-origin:top}
+.copy{min-width:0}.label{font-size:13px;line-height:1.5;font-weight:500;color:#4a6365;margin-bottom:10px!important}
+.copy h2{font-size:clamp(28px,2.7vw,37px)!important;line-height:1.18!important;letter-spacing:-.02em!important;font-weight:700!important}
+.description{font-size:15px;color:#4a6365;line-height:1.7;margin-top:12px!important;max-width:650px}
+.link{display:flex;align-items:center;gap:29px;font-size:17px;font-weight:500;line-height:1.45;min-height:90px;padding-left:34px;border-left:1px solid #0e252633}
+.arrow{width:52px;height:52px;display:grid;place-items:center;flex-shrink:0;background:#0e2526;color:#fff;border-radius:50%;transition:background .35s,transform .35s}
+.arrow svg{transition:transform .35s}.link:hover .arrow,.link:focus-visible .arrow{background:#009390;transform:rotate(-35deg)}.link:hover .arrow svg{transform:translateX(2px)}
+.link:focus-visible{outline:2px solid #0e2526!important;outline-offset:8px!important;border-radius:2px}
 .section[data-visible=true] .copy{animation:reveal .7s both}.section[data-visible=true] .link{animation:reveal .7s .14s both}.section[data-visible=true] .inner::before{animation:draw .8s both}
 @keyframes reveal{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
 @keyframes draw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 @media(max-width:1000px){.inner{width:calc(100% - 64px);padding:28px;gap:27px}.copy h2{font-size:30px!important}.link{padding-left:25px;gap:18px;font-size:15px}.arrow{width:45px;height:45px}}
-@media(max-width:700px){.section{padding-bottom:30px}.inner{width:calc(100% - 40px);grid-template-columns:1fr;padding:24px;gap:20px}.copy h2{font-size:28px!important}.label{font-size:12px;margin-bottom:9px!important}.description{font-size:14px;line-height:1.7;margin-top:12px!important}.link{border-left:0;border-top:1px solid #123a3d33;padding:17px 0 0;min-height:0;justify-content:space-between;gap:13px;font-size:15px}.link br{display:none}.arrow{width:40px;height:40px}.arrow svg{width:22px;height:22px}}
+@media(max-width:700px){.section{padding-bottom:30px}.inner{width:calc(100% - 40px);grid-template-columns:1fr;padding:24px;gap:20px}.copy h2{font-size:28px!important}.label{font-size:12px;margin-bottom:9px!important}.description{font-size:14px;line-height:1.7;margin-top:12px!important}.link{border-left:0;border-top:1px solid #0e252633;padding:17px 0 0;min-height:0;justify-content:space-between;gap:13px;font-size:15px}.link br{display:none}.arrow{width:40px;height:40px}.arrow svg{width:22px;height:22px}}
 @media(prefers-reduced-motion:reduce){.section *,.section *::before{animation:none!important;transition:none!important}.link:hover .arrow,.link:focus-visible .arrow,.link:hover .arrow svg{transform:none}}

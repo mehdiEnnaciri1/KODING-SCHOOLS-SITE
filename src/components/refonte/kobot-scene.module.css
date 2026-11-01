@@ -2,11 +2,11 @@
 .portrait{position:absolute;inset:-6% -5% 0;transform:translate3d(var(--kobot-x),var(--kobot-y),0) rotateZ(var(--kobot-tilt)) rotateY(var(--kobot-yaw)) rotateX(var(--kobot-pitch)) scale(var(--kobot-scale));transform-origin:50% 64%;transition:transform .48s cubic-bezier(.2,1.15,.35,1);pointer-events:none}
 .entrance{width:100%;height:100%;transform-origin:50% 65%}
 .float{width:100%;height:100%}
-.kobot{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 17px #123a3d15);user-select:none;-webkit-user-drag:none}
-.ground{position:absolute;bottom:9px;left:29%;width:42%;height:16px;border-radius:50%;background:#123a3d;opacity:.1;filter:blur(8px);pointer-events:none}
+.kobot{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 17px #0e252615);user-select:none;-webkit-user-drag:none}
+.ground{position:absolute;bottom:9px;left:29%;width:42%;height:16px;border-radius:50%;background:#0e2526;opacity:.1;filter:blur(8px);pointer-events:none}
 .scene[data-entered=true] .entrance{animation:kobot-welcome 3.2s cubic-bezier(.22,.7,.25,1) both}
 .scene[data-entered=true] .ground{animation:kobot-shadow 3.2s ease-out both}
-.scene[data-floating=true] .ground{bottom:18px;left:26%;width:48%;height:25px;background:#0a3334;filter:blur(11px)}
+.scene[data-floating=true] .ground{bottom:18px;left:26%;width:48%;height:25px;background:#0e2526;filter:blur(11px)}
 .scene[data-floating=true][data-entered=true] .float{animation:kobot-float 4.6s ease-in-out 3.2s infinite}
 .scene[data-floating=true][data-entered=true] .ground{animation:kobot-shadow 3.2s ease-out both,kobot-float-shadow 4.6s ease-in-out 3.2s infinite}
 @keyframes kobot-welcome{0%{opacity:0;transform:translate(40px,100px) rotate(-20deg) scale(.78)}22%{opacity:1;transform:translate(-9px,-34px) rotate(9deg) scale(1.06)}43%{transform:translate(5px,15px) rotate(-7deg) scale(.98)}64%{transform:translate(-3px,-14px) rotate(4deg) scale(1.025)}82%{transform:translate(0,5px) rotate(-1.8deg) scale(.995)}100%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}}

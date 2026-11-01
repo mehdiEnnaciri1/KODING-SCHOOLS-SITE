@@ -47,14 +47,13 @@ function V2SiteHeader() {
         <Brand href={homeHref} />
         <nav className={s.desktop} aria-label="Navigation principale">
           <button ref={programmeButton} onClick={() => setProgrammeOpen(!programmeOpen)} aria-expanded={programmeOpen} aria-controls="programme-navigation">Le programme <span aria-hidden="true">⌄</span></button>
-          <a href={`${homeHref}#temoignage`}>Témoignages</a>
-          <a href={BLOG_URL}>Le blog</a>
+          <a href={`${homeHref}#ecoles`}>Pour les écoles</a>
+          <a href={pageHref("parents-licences")} aria-current={path === pageHref("parents-licences") ? "page" : undefined}>Parents & licences</a>
           <a href={pageHref("partenariats")} aria-current={path === pageHref("partenariats") ? "page" : undefined}>Partenariats</a>
-          <a href={pageHref("qui-sommes-nous")} aria-current={path === pageHref("qui-sommes-nous") ? "page" : undefined}>Qui sommes-nous ?</a>
+          <a href={BLOG_URL}>Blog</a>
         </nav>
         <div className={s.actions}>
-          <a className={s.parents} href={pageHref("parents-licences")} aria-current={path === pageHref("parents-licences") ? "page" : undefined}>Parents & licences</a>
-          <a className={s.contact} href="https://kodingschools.com/fr/contact/">Contactez-nous</a>
+          <span className={s.lang}><strong aria-current="true">FR</strong> / <a href="https://kodingschools.com/en/" hrefLang="en" lang="en">EN</a></span>
           <a className={s.login} href={LOGIN_URL}>Connexion</a>
           <button className={s.menu} ref={menuButton} onClick={() => { setOpen(!open); setProgrammeOpen(false); }} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}><span aria-hidden="true">{open ? "×" : "☰"}</span></button>
         </div>
@@ -66,11 +65,13 @@ function V2SiteHeader() {
         <a className={s.mobileParents} href={pageHref("parents-licences")}>Parents & licences <span>Activer un compte · Trouver une librairie</span></a>
         <span className={s.mobileGroup}>Le programme</span>
         {programmeItems.map(item => <a className={s.mobileSub} key={item.href} href={item.href}>{item.label}</a>)}
-        <a href={`${homeHref}#temoignage`}>Témoignages</a>
-        <a href={BLOG_URL}>Le blog</a>
+        <a href={`${homeHref}#ecoles`}>Pour les écoles</a>
         <a href={pageHref("partenariats")}>Partenariats</a>
+        <a href={BLOG_URL}>Blog</a>
+        <a href={`${homeHref}#temoignage`}>Témoignages</a>
         <a href={pageHref("qui-sommes-nous")}>Qui sommes-nous ?</a>
-        <a className={s.mobileContact} href="https://kodingschools.com/fr/contact/">Contactez-nous <span aria-hidden="true">↗</span></a>
+        <a href={LOGIN_URL}>Connexion</a>
+        <a className={s.mobileContact} href="https://kodingschools.com/fr/contact/">Demander une démo <span aria-hidden="true">↗</span></a>
       </nav>}
     </header>
   </>;

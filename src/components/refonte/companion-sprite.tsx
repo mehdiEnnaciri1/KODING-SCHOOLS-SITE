@@ -15,5 +15,5 @@ export function CompanionSprite({ pose }: { pose: "learning" | "thinking" }) {
     observer.observe(host.current);
     return () => observer.disconnect();
   }, []);
-  return <div ref={host} className={`${s.sprite} ${s[pose]}`} data-visible={visible} aria-hidden="true"><div className={s.entrance}><Image src={`/refonte-v2/${pose}.png`} alt="" width={512} height={512} sizes="180px" className={s.image} /></div></div>;
+  return <div ref={host} className={`${s.sprite} ${s[pose]}`} data-visible={visible} aria-hidden="true"><div className={s.entrance}><Image src={`/charte/kobot/kobot-${pose}.png`} alt="" width={512} height={512} sizes="180px" className={s.image} /></div></div>;
 }

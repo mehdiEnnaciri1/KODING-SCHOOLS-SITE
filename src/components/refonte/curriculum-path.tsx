@@ -31,7 +31,7 @@ export function CurriculumPath({ level, onLevelChange }: { level: number; onLeve
 
   return <header ref={section} className={`${s.section} ${version === "v2" ? s.v2 : ""}`} data-entered={entered}>
     <div className={s.inner}>
-      {version === "v2" && <Image className={s.companion} src="/refonte-v2/learning.png" width={280} height={280} alt="" aria-hidden="true" />}
+      {version === "v2" && <Image className={s.companion} src="/charte/kobot/kobot-learning.png" width={280} height={280} alt="" aria-hidden="true" />}
       <div className={s.heading}>
         <p>{version === "v2" ? "Du primaire à la première année du lycée" : "Du primaire au lycée"}</p><h1>Le curriculum cible,<br />niveau par niveau.</h1>
         <span>10 niveaux disponibles <i aria-hidden="true">·</i> Français & anglais</span>
