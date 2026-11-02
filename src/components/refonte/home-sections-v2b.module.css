@@ -1,0 +1,59 @@
+/* Déploiement : tracé des lignes à l'entrée dans l'écran (identique à la maquette) */
+.depTitle, .num, .stepTitle, .stepText { opacity: 0; transform: translateY(14px); }
+.depTitle { transform: translateY(16px); }
+.step { position: relative; display: flex; flex-direction: column; gap: 12px; padding-top: 24px; }
+.step::before, .line { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.step::before { background: #4a6365; }
+.line { background: #3eccc5; transform: scaleX(0); transform-origin: left; }
+.dot { position: absolute; top: -5px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: #ff9c13; transform: scale(0); }
+.on .depTitle { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
+.on .line { animation: draw .9s cubic-bezier(.2, .7, .2, 1) calc(.2s + var(--i) * .25s) both; }
+.on .dot { animation: pop .4s ease calc(.2s + var(--i) * .25s) both; }
+.on .num, .on .stepTitle { animation: rise .6s cubic-bezier(.2, .7, .2, 1) calc(.45s + var(--i) * .25s) both; }
+.on .stepText { animation: rise .6s cubic-bezier(.2, .7, .2, 1) calc(.6s + var(--i) * .25s) both; }
+.chip { transition: background .25s ease, border-color .25s ease, transform .25s ease; }
+.chip:hover { background: rgba(62, 204, 197, .12); border-color: #3eccc5 !important; transform: translateY(-2px); }
+.cta { transition: transform .25s ease, box-shadow .25s ease; }
+.cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255, 156, 19, .35); }
+@keyframes draw { to { transform: scaleX(1); } }
+@keyframes pop { to { transform: scale(1); } }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+/* Parents */
+.activate { transition: transform .3s ease, box-shadow .3s ease; }
+.activate:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(14, 37, 38, .18); }
+.arrow { transition: transform .25s ease; }
+.activate:hover .arrow, .row:hover .arrow { transform: translateX(4px); }
+.row { transition: background .25s ease; }
+.row:hover { background: #f0fffe; }
+
+/* FAQ */
+.thinking { animation: think 4.6s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes think { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(3deg); } }
+.faqItem { border-bottom: 1px solid #cfe3e1; padding: 24px 0; }
+.faqBtn { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 20px; line-height: 28px; font-weight: 700; color: #0e2526; }
+.faqBtn:focus-visible { outline: 3px solid #3eccc5; outline-offset: 4px; border-radius: 8px; }
+.faqIcon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; font-weight: 500; color: #0e2526; background: #d8f5f3; transition: background .25s ease, transform .35s ease; }
+.faqBtn:hover .faqIcon { background: #3eccc5; }
+.faqOpen .faqIcon { background: #ff9c13; transform: rotate(180deg); }
+.faqPanel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s cubic-bezier(.2, .7, .2, 1); }
+.faqOpen .faqPanel { grid-template-rows: 1fr; }
+.faqPanel > div { overflow: hidden; }
+
+/* Blog */
+.postBig, .postRow { transition: transform .3s ease; }
+.postBig:hover, .postRow:hover { transform: translateY(-4px); }
+.postBig img, .postRow img { transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.postBig:hover img, .postRow:hover img { transform: scale(1.04); }
+.frame { overflow: hidden; border-radius: 28px; display: block; }
+.frameSm { overflow: hidden; border-radius: 16px; flex-shrink: 0; display: block; }
+.linkArrow { display: inline-block; transition: transform .25s ease; }
+.postBig:hover .linkArrow, .postRow:hover .linkArrow { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .depTitle, .num, .stepTitle, .stepText { opacity: 1; transform: none; }
+  .line, .dot { transform: none; }
+  .on * { animation: none !important; }
+  .thinking { animation: none; }
+  .faqPanel, .faqIcon, .activate, .postBig, .postRow, .chip, .cta, .arrow { transition: none; }
+}

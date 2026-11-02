@@ -12,12 +12,12 @@ import { SchoolDeployment } from "./school-deployment";
 import { SchoolTestimony } from "./school-testimony";
 import { MediaCoverage } from "./media-coverage";
 import { PresseV2, SeanceV2 } from "./home-sections-v2";
+import { BlogV2, DeploiementV2, FaqV2, ParentsV2 } from "./home-sections-v2b";
 import { BlogPreview } from "./blog-preview";
 import { SchoolFaq } from "./school-faq";
 import { ParentsGateway } from "./parents-gateway";
 import { HomeClosing } from "./home-closing";
 import { HomeVersionProvider, type HomeVersion } from "./home-version";
-import { CompanionSprite } from "./companion-sprite";
 import s from "./koding-home.module.css";
 
 type IconName = "arrow" | "play" | "code" | "chip" | "shield" | "pen" | "chart" | "check" | "book" | "close";
@@ -65,12 +65,12 @@ export function KodingHome({ version = "v1" }: { version?: HomeVersion }) {
       </>}
       {version === "v1" && <AdaptedPath />}
       {version === "v2" ? <SeanceV2 /> : <LessonResources />}
-      <SchoolDeployment onContact={() => setModal("demo")} />
+      {version === "v2" ? <DeploiementV2 onContact={() => setModal("demo")} /> : <SchoolDeployment onContact={() => setModal("demo")} />}
       <SchoolTestimony />
       {version === "v2" ? <PresseV2 /> : <MediaCoverage />}
-      <ParentsGateway />
-      <SchoolFaq illustration={version === "v2" ? <CompanionSprite pose="thinking" /> : undefined} />
-      <BlogPreview />
+      {version === "v2" ? <ParentsV2 /> : <ParentsGateway />}
+      {version === "v2" ? <FaqV2 /> : <SchoolFaq />}
+      {version === "v2" ? <BlogV2 /> : <BlogPreview />}
       <HomeClosing onPresentation={() => setModal("demo")} />
     </main>
     <SiteFooter />
