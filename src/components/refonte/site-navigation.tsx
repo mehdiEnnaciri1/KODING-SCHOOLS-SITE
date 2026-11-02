@@ -50,7 +50,7 @@ function V2SiteHeader() {
           <a href="/ecoles" aria-current={path === "/ecoles" ? "page" : undefined}>Pour les écoles</a>
           <a href={pageHref("parents-licences")} aria-current={path === pageHref("parents-licences") ? "page" : undefined}>Parents & licences</a>
           <a href={pageHref("partenariats")} aria-current={path === pageHref("partenariats") ? "page" : undefined}>Partenariats</a>
-          <a href={BLOG_URL}>Blog</a>
+          <a href={BLOG_URL} aria-current={path.startsWith("/blog") ? "page" : undefined}>Blog</a>
         </nav>
         <div className={s.actions}>
           <span className={s.lang}><strong aria-current="true">FR</strong> / <a href="https://kodingschools.com/en/" hrefLang="en" lang="en">EN</a></span>

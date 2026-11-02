@@ -1,0 +1,28 @@
+.kobotHost { position: relative; width: min(100%, 320px); aspect-ratio: 1; justify-self: center; }
+.kobot { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; animation: enter 3.2s cubic-bezier(.22, .7, .25, 1) both, float 4.6s ease-in-out 3.2s infinite; transform-origin: 50% 65%; }
+.kobotShadow { position: absolute; bottom: 4px; left: 28%; width: 44%; height: 18px; border-radius: 50%; background: #000; filter: blur(10px); animation: shadow 4.6s ease-in-out 3.2s infinite; opacity: .3; }
+@keyframes enter {
+  0% { opacity: 0; transform: translate(40px, 100px) rotate(-20deg) scale(.78); }
+  22% { opacity: 1; transform: translate(-9px, -34px) rotate(9deg) scale(1.06); }
+  43% { transform: translate(5px, 15px) rotate(-7deg) scale(.98); }
+  64% { transform: translate(-3px, -14px) rotate(4deg) scale(1.025); }
+  82% { transform: translate(0, 5px) rotate(-1.8deg) scale(.995); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -15px; } }
+@keyframes shadow { 0%, 100% { opacity: .38; transform: scale(.83); } 50% { opacity: .2; transform: scale(1.07); } }
+.tab { transition: background .25s ease, border-color .25s ease, transform .2s ease; }
+.tab:hover { transform: translateY(-2px); border-color: #3eccc5 !important; }
+.swap { animation: swap .45s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes swap { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.card { transition: box-shadow .3s ease, border-color .3s ease; }
+.card:hover { border-color: #3eccc5 !important; box-shadow: 0 16px 40px rgba(14, 37, 38, .08); }
+.reveal { opacity: 0; transform: translateY(16px); }
+.on .reveal { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .kobot, .kobotShadow, .swap, .on .reveal { animation: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .tab, .card { transition: none; }
+  .tab:hover { transform: none; }
+}

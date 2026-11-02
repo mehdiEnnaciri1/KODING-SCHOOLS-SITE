@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties, ReactNode } from "react";
+import { useEffect, type CSSProperties, type ReactNode } from "react";
 import { HomeVersionProvider } from "./home-version";
 import { SiteFooter, SiteHeader } from "./site-navigation";
 import base from "./koding-home.module.css";
@@ -26,7 +26,55 @@ export const S = {
   kobotShadow: st("height:auto;filter:drop-shadow(0 16px 40px rgba(14,37,38,.14))"),
 };
 
+// Mouvement commun des maquettes : les blocs de chaque section apparaissent en remontant
+// quand ils entrent dans l'écran, et les Kobot (hors hero) flottent doucement.
+// Les sections marquées data-nomotion gèrent leur propre animation.
+export function useSiteMotion(enabled = true) {
+  useEffect(() => {
+    if (!enabled || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const ease = "cubic-bezier(.2,.7,.2,1)";
+    let pending: [Element, Animation][] = [];
+    const animations: Animation[] = [];
+    const start = window.setTimeout(() => {
+      document.querySelectorAll("main section").forEach((section, index) => {
+        if (index === 0 || section.closest("[data-nomotion]")) return;
+        const inner = section.firstElementChild;
+        if (!inner) return;
+        [...inner.children].forEach((el, k) => {
+          if (el.getAnimations().length || (el as HTMLElement).style.transition) return;
+          const animation = el.animate([{ opacity: 0, transform: "translateY(24px)" }, { opacity: 1, transform: "none" }], { duration: 700, delay: Math.min(k, 4) * 90, easing: ease, fill: "backwards" });
+          animations.push(animation);
+          if (el.getBoundingClientRect().top < window.innerHeight) animation.finish();
+          else { animation.pause(); pending.push([el, animation]); }
+        });
+      });
+      document.querySelectorAll<HTMLImageElement>('main img[src*="kobot-"]').forEach(img => {
+        if (img.getAnimations().length || img.closest("[data-nomotion]") || img.closest("section") === document.querySelector("main section")) return;
+        animations.push(img.animate([{ transform: "translateY(0) rotate(-2deg)" }, { transform: "translateY(-10px) rotate(2deg)" }, { transform: "translateY(0) rotate(-2deg)" }], { duration: 5500, iterations: Infinity, easing: "ease-in-out" }));
+      });
+      check();
+    }, 400);
+    function check() {
+      pending = pending.filter(([el, animation]) => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.9) { animation.play(); return false; }
+        return true;
+      });
+    }
+    const finishAll = () => { pending.forEach(([, animation]) => animation.finish()); pending = []; };
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    window.addEventListener("beforeprint", finishAll);
+    const fallback = window.setTimeout(() => { if (document.hidden || !document.hasFocus()) finishAll(); }, 2500);
+    return () => {
+      window.clearTimeout(start); window.clearTimeout(fallback);
+      window.removeEventListener("scroll", check); window.removeEventListener("resize", check); window.removeEventListener("beforeprint", finishAll);
+      finishAll(); animations.forEach(a => a.cancel());
+    };
+  }, [enabled]);
+}
+
 export function Frame({ children }: { children: ReactNode }) {
+  useSiteMotion();
   return <HomeVersionProvider version="v2"><div className={base.site} data-version="v2"><SiteHeader /><main id="contenu">{children}</main><SiteFooter /></div></HomeVersionProvider>;
 }
 

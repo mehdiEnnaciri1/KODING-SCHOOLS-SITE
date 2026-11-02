@@ -12,6 +12,8 @@ import { SchoolDeployment } from "./school-deployment";
 import { SchoolTestimony } from "./school-testimony";
 import { MediaCoverage } from "./media-coverage";
 import { PresseV2, SeanceV2 } from "./home-sections-v2";
+import { HeroV2 } from "./hero-v2";
+import { useSiteMotion } from "./page-kit";
 import { BlogV2, DeploiementV2, FaqV2, ParentsV2 } from "./home-sections-v2b";
 import { BlogPreview } from "./blog-preview";
 import { SchoolFaq } from "./school-faq";
@@ -41,6 +43,7 @@ export function KodingHome({ version = "v1" }: { version?: HomeVersion }) {
   const [modal, setModal] = useState<"demo" | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const site = useRef<HTMLDivElement>(null);
+  useSiteMotion(version === "v2");
   useEffect(() => {
     if (modal) dialog.current?.showModal();
     else dialog.current?.close();
@@ -54,10 +57,10 @@ export function KodingHome({ version = "v1" }: { version?: HomeVersion }) {
   return <HomeVersionProvider version={version}><div ref={site} className={s.site} id="accueil" data-version={version}>
     <SiteHeader />
     <main id="contenu">
-      <section className={s.hero} aria-labelledby="hero-title"><div className={`${s.wrap} ${s.heroGrid}`}>
-        <div className={s.heroCopy}><p className={s.heroContext}>{version === "v2" ? "Du primaire à la première année du lycée" : "De la première année du primaire au lycée"}</p><h1 id="hero-title">Le numérique et l’IA,<br className={s.desktopBreak} /> au programme<br className={s.desktopBreak} /> de votre école.</h1><p className={s.heroLead}>{version === "v2" ? "Un programme clé en main, des cours prêts à l’emploi et une plateforme pour aider vos enseignants à faire découvrir le numérique, la programmation et l’IA chaque semaine." : "Un programme complet, une plateforme d’apprentissage et une formation pour vos enseignants. Les cours et les activités sont prêts pour une séance de numérique chaque semaine."}</p><div className={s.heroActions}><button className={s.orangeButton} onClick={() => setModal("demo")}>{version === "v2" ? "Demander une démo" : "Demander une présentation"}</button><a className={s.lightLink} href="#seance"><Icon name="play" size={18} /> Explorer une séance</a></div><div className={s.heroLanguages}><span>Le programme est disponible en</span><strong>Français <i aria-hidden="true">/</i> Anglais</strong></div></div>
-        <div className={s.heroVisual}>{version === "v2" ? <KobotScene src="/refonte-v2/hero.png" alt="Le nouveau compagnon Koding Schools, au visage blanc, salue les visiteurs" floating /> : <KobotScene />}</div>
-      </div></section>
+      {version === "v2" ? <HeroV2 onDemo={() => setModal("demo")} /> :       <section className={s.hero} aria-labelledby="hero-title"><div className={`${s.wrap} ${s.heroGrid}`}>
+        <div className={s.heroCopy}><p className={s.heroContext}>{(version as string) === "v2" ? "Du primaire à la première année du lycée" : "De la première année du primaire au lycée"}</p><h1 id="hero-title">Le numérique et l’IA,<br className={s.desktopBreak} /> au programme<br className={s.desktopBreak} /> de votre école.</h1><p className={s.heroLead}>{(version as string) === "v2" ? "Un programme clé en main, des cours prêts à l’emploi et une plateforme pour aider vos enseignants à faire découvrir le numérique, la programmation et l’IA chaque semaine." : "Un programme complet, une plateforme d’apprentissage et une formation pour vos enseignants. Les cours et les activités sont prêts pour une séance de numérique chaque semaine."}</p><div className={s.heroActions}><button className={s.orangeButton} onClick={() => setModal("demo")}>{(version as string) === "v2" ? "Demander une démo" : "Demander une présentation"}</button><a className={s.lightLink} href="#seance"><Icon name="play" size={18} /> Explorer une séance</a></div><div className={s.heroLanguages}><span>Le programme est disponible en</span><strong>Français <i aria-hidden="true">/</i> Anglais</strong></div></div>
+        <div className={s.heroVisual}>{(version as string) === "v2" ? <KobotScene src="/refonte-v2/hero.png" alt="Le nouveau compagnon Koding Schools, au visage blanc, salue les visiteurs" floating /> : <KobotScene />}</div>
+      </div></section>}
       {version === "v1" && <OfferSystem />}
       {version === "v2" ? <ProgrammeDomains /> : <>
       <section id="programme" className={s.programme} aria-labelledby="programme-title"><div className={s.wrap}><div className={s.programmeHeading}><h2 id="programme-title">Ce que vos élèves vont apprendre.</h2><p>Dès la 1re année primaire, cinq domaines pour apprendre à programmer, comprendre l’IA, créer et développer son esprit critique.</p></div><ProgrammeJourney />

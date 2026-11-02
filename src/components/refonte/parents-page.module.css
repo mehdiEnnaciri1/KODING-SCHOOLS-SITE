@@ -1,0 +1,30 @@
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+.reveal.in { opacity: 1; transform: none; }
+.quick { transition: background .25s ease; }
+.quick:hover { background: #f0fffe; }
+.quick .arrow, .pick .arrow { display: inline-block; transition: transform .25s ease; }
+.quick:hover .arrow, .pick:hover .arrow { transform: translateX(4px); }
+.pick { transition: transform .25s ease, box-shadow .25s ease; }
+.pick:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0, 0, 0, .25); }
+.pick:focus-visible, .back:focus-visible, .faqBtn:focus-visible { outline: 3px solid #3eccc5; outline-offset: 3px; }
+.step { animation: stepIn .45s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes stepIn { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+.price { transition: transform .3s ease, border-color .3s ease; }
+.price:hover { transform: translateY(-4px); border-color: #3eccc5 !important; }
+.kobot { animation: float 4.6s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
+.faqItem { border-bottom: 1px solid #cfe3e1; padding: 24px 0; }
+.faqBtn { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 18px; line-height: 26px; font-weight: 700; color: #0e2526; }
+.faqIcon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; font-weight: 500; background: #d8f5f3; transition: background .25s ease, transform .35s ease; }
+.faqBtn:hover .faqIcon { background: #3eccc5; }
+.faqOpen .faqIcon { background: #ff9c13; transform: rotate(180deg); }
+.faqPanel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s cubic-bezier(.2, .7, .2, 1); }
+.faqOpen .faqPanel { grid-template-rows: 1fr; }
+.faqPanel > div { overflow: hidden; }
+.ghost { transition: background .25s ease, color .25s ease; }
+.ghost:hover { background: #ffffff; color: #0e2526 !important; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .step, .kobot { animation: none; }
+  .quick, .quick .arrow, .pick, .price, .faqPanel, .faqIcon, .ghost { transition: none; }
+}

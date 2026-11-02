@@ -56,7 +56,7 @@ export function EcolesPage() {
       </div>
     </section>
 
-    <section id="deploiement" ref={deploy} className={seen ? a.on : undefined} style={st("background:#ffffff")}>
+    <section id="deploiement" data-nomotion ref={deploy} className={seen ? a.on : undefined} style={st("background:#ffffff")}>
       <div style={{ ...S.wrap, ...st("padding:96px 24px;display:flex;flex-direction:column;gap:48px") }}>
         <h2 className={a.title} style={S.h2}>Le déploiement, en quatre étapes.</h2>
         <ol className={a.steps}>

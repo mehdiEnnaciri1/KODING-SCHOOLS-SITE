@@ -34,7 +34,7 @@ export function DeploiementV2({ onContact }: { onContact: () => void }) {
     return () => observer.disconnect();
   }, []);
   const chip = st("border:1px solid #4a6365;border-radius:999px;padding:8px 16px;font-size:15px;font-weight:500");
-  return <section id="ecoles" ref={node} className={seen ? v.on : undefined} style={st("background:#0e2526;color:#ffffff")}>
+  return <section id="ecoles" data-nomotion ref={node} className={seen ? v.on : undefined} style={st("background:#0e2526;color:#ffffff")}>
     <div style={{ ...S.wrap, ...st("padding:96px 24px;display:flex;flex-direction:column;gap:48px") }}>
       <h2 className={v.depTitle} style={{ ...S.h2, color: "#ffffff" }}>Le déploiement dans votre école.</h2>
       <ol style={st("list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px")}>
