@@ -66,3 +66,9 @@
 .brandLogo{transform-origin:20% 60%;transition:transform .3s ease}
 .brandLogo:hover{transform:rotate(-4deg) scale(1.03)}
 @media(prefers-reduced-motion:reduce){.brandLogo{transition:none}.brandLogo:hover{transform:none}}
+/* Logo animé : petit rebond à l'arrivée, puis un clin d'œil régulier ; plus vif au survol */
+@keyframes logoIn{0%{opacity:0;transform:translateY(-14px) rotate(-8deg) scale(.9)}55%{opacity:1;transform:translateY(3px) rotate(3deg) scale(1.04)}100%{opacity:1;transform:none}}
+@keyframes logoWink{0%,86%,100%{transform:none}90%{transform:rotate(-5deg) scale(1.05)}94%{transform:rotate(3deg) scale(1.03)}}
+.brandLogo{animation:logoIn .8s cubic-bezier(.2,.9,.3,1.2) both,logoWink 6s ease-in-out 1.6s infinite}
+.brandLogo:hover{animation:logoWink .6s ease-in-out;transform:rotate(-4deg) scale(1.05)}
+@media(prefers-reduced-motion:reduce){.brandLogo,.brandLogo:hover{animation:none}}
