@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { lessonResources } from "@/domain/refonte/lesson-resources";
+import { schoolTestimony as testimony } from "@/domain/refonte/testimony";
 import { mediaAppearances, mediaLogos } from "@/domain/refonte/media";
 import { S, st } from "./page-kit";
 import { useMarquee } from "./use-marquee";
@@ -87,6 +88,50 @@ export function PresseV2() {
           {m.id === "medias24" && <span style={st("font-size:12px;color:#4a6365")}>Koding Kids · 2017</span>}
         </li>))}
       </ul>
+    </div>
+  </section>;
+}
+
+export function TestimonyV2() {
+  return <section id="temoignage" style={st("background:#ffffff")}>
+    <div style={{ ...S.wrap, ...st("padding:96px 24px 48px;display:flex;flex-direction:column;gap:48px") }}>
+      <div style={st("display:flex;flex-direction:column;gap:12px")}>
+        <p style={S.eyebrow}>La parole aux écoles</p>
+        <h2 style={{ ...S.h2, color: "#0e2526" }}>À l’école Planet Montessori.</h2>
+      </div>
+      <div style={st("display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:64px;align-items:center")}>
+        <div style={st("display:flex;flex-direction:column;gap:12px")}>
+          <a className={v.poster} href={testimony.video} target="_blank" rel="noreferrer" aria-label="Voir le témoignage de Planet Montessori sur YouTube, dans un nouvel onglet" style={st("position:relative;display:block;border-radius:28px;overflow:hidden;text-decoration:none")}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={testimony.image} alt="Oumayma, enseignante d’informatique à Planet Montessori, témoigne dans sa salle de classe" style={st("display:block;width:100%;height:auto")} />
+            <span style={st("position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:16px;color:#ffffff")}>
+              <span className={v.playDot} style={st("width:56px;height:56px;border-radius:50%;background:#ff9c13;color:#0e2526;display:grid;place-items:center;font-size:18px")}>▶</span>
+              <span style={st("display:flex;flex-direction:column;background:#0e2526;border-radius:16px;padding:8px 14px")}><strong style={st("font-size:16px;font-weight:700")}>Voir le témoignage</strong><small style={st("font-size:13px;color:#d8f5f3")}>{testimony.duration} · sur YouTube ↗</small></span>
+            </span>
+          </a>
+          <p style={st("margin:0;font-size:14px;line-height:22px;color:#4a6365")}>L’expérience de l’école, racontée par son équipe et ses élèves.</p>
+        </div>
+        <figure style={st("margin:0;display:flex;flex-direction:column;gap:24px")}>
+          <blockquote cite={testimony.video} style={st("margin:0;font-size:28px;line-height:38px;font-weight:300;color:#0e2526")}>« {testimony.quote} »</blockquote>
+          <figcaption style={st("display:flex;flex-direction:column;gap:2px;padding-left:16px;border-left:2px solid #ff9c13;font-size:14px;line-height:22px;color:#4a6365")}><strong style={st("font-size:16px;color:#0e2526;font-weight:700")}>{testimony.speaker}</strong><span>{testimony.role}</span><span>{testimony.school}</span></figcaption>
+          <p style={st("margin:0;font-size:14px;line-height:22px;color:#4a6365")}>{testimony.sourceNote}</p>
+        </figure>
+      </div>
+    </div>
+  </section>;
+}
+
+export function ClosingV2({ onDemo }: { onDemo: () => void }) {
+  return <section id="presentation" style={st("background:#0e2526;color:#ffffff")}>
+    <div style={{ ...S.wrap, ...st("padding:96px 24px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap") }}>
+      <div style={st("max-width:640px;display:flex;flex-direction:column;gap:16px")}>
+        <h2 style={{ ...S.h2, color: "#ffffff" }}>Découvrez Koding Schools avec votre équipe.</h2>
+        <p style={S.leadDark}>Parcourons le programme et les ressources d’une séance, à partir des niveaux et de l’organisation de votre école.</p>
+      </div>
+      <div style={st("display:flex;flex-direction:column;align-items:center;gap:16px")}>
+        <button type="button" className={v.cta} onClick={onDemo} style={{ ...S.orange, border: 0, cursor: "pointer", fontFamily: "inherit", display: "inline-flex", gap: 12, alignItems: "center" }}>Demander une démo <span aria-hidden="true">→</span></button>
+        <a href="/contact" style={st("color:#d8f5f3;font-size:14px;text-decoration:underline;text-underline-offset:3px")}>Ou contactez-nous directement →</a>
+      </div>
     </div>
   </section>;
 }

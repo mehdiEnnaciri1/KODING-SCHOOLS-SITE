@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Frame, S, st } from "./page-kit";
+import { KobotHero } from "./kobot-hero";
 import v from "./programme-page.module.css";
 
 const LEVELS = ["1AP", "2AP", "3AP", "4AP", "5AP", "6AP", "1AC", "2AC", "3AC", "Tronc commun"];
@@ -34,11 +35,7 @@ export function ProgrammePage() {
           <h1 style={{ ...S.h1, color: "#ffffff" }}>Le curriculum cible, niveau par niveau.</h1>
           <p style={{ ...S.leadDark, maxWidth: 560 }}>10 niveaux disponibles, en français et en anglais. Choisissez un niveau pour découvrir les cinq domaines enseignés.</p>
         </div>
-        <div className={v.kobotHost}>
-          <span className={v.kobotShadow} aria-hidden="true" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={v.kobot} src="/charte/kobot/kobot-learning.png" alt="Kobot devant un ordinateur" draggable={false} />
-        </div>
+        <div style={st("position:relative;width:min(100%,320px);aspect-ratio:1;justify-self:center")}><KobotHero src="/charte/kobot/kobot-learning.png" alt="Kobot devant un ordinateur" /></div>
       </div>
     </section>
 

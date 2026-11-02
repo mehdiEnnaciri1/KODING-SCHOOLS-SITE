@@ -55,7 +55,7 @@ function V2SiteHeader() {
         <div className={s.actions}>
           <span className={s.lang}><strong aria-current="true">FR</strong> / <a href="https://kodingschools.com/en/" hrefLang="en" lang="en">EN</a></span>
           <a className={s.login} href={LOGIN_URL}>Connexion</a>
-          <button className={s.menu} ref={menuButton} onClick={() => { setOpen(!open); setProgrammeOpen(false); }} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}><span aria-hidden="true">{open ? "×" : "☰"}</span></button>
+          <button className={s.menu} ref={menuButton} onClick={() => { setOpen(!open); setProgrammeOpen(false); }} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}>{open ? "Fermer" : "Menu"}</button>
         </div>
       </div>
       {programmeOpen && <nav id="programme-navigation" className={s.discovery} aria-label="Découvrir le programme" onClick={close}>
@@ -63,15 +63,9 @@ function V2SiteHeader() {
       </nav>}
       {open && <nav id="mobile-navigation" className={s.mobile} aria-label="Navigation mobile" onClick={close}>
         <a className={s.mobileParents} href={pageHref("parents-licences")}>Parents & licences <span>Activer un compte · Trouver une librairie</span></a>
-        <span className={s.mobileGroup}>Le programme</span>
-        {programmeItems.map(item => <a className={s.mobileSub} key={item.href} href={item.href}>{item.label}</a>)}
-        <a href="/ecoles">Pour les écoles</a>
-        <a href={pageHref("partenariats")}>Partenariats</a>
-        <a href={BLOG_URL}>Blog</a>
-        <a href={`${homeHref}#temoignage`}>Témoignages</a>
-        <a href={pageHref("qui-sommes-nous")}>Qui sommes-nous ?</a>
-        <a className={s.mobileContact} href="/contact?profil=ecole">Demander une démo <span aria-hidden="true">↗</span></a>
-        <a href={LOGIN_URL}>Connexion</a>
+        {[["Le programme", pageHref("programme")], ["Pour les écoles", "/ecoles"], ["Partenariats", pageHref("partenariats")], ["Blog", BLOG_URL], ["Témoignages", `${homeHref}#temoignage`], ["Qui sommes-nous", pageHref("qui-sommes-nous")]].map(([label, href]) => <a className={s.mobileRow} key={label} href={href}>{label}<span aria-hidden="true">→</span></a>)}
+        <a className={s.mobileDemo} href="/contact?profil=ecole">Demander une démo</a>
+        <a className={s.mobileLogin} href={LOGIN_URL}>Connexion</a>
         <span className={s.mobileLang}><strong aria-current="true">FR</strong> / <a href="https://kodingschools.com/en/" hrefLang="en" lang="en">EN</a></span>
       </nav>}
     </header>

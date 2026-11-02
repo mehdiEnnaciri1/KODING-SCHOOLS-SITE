@@ -72,3 +72,6 @@
 .brandLogo{animation:logoIn .8s cubic-bezier(.2,.9,.3,1.2) both,logoWink 6s ease-in-out 1.6s infinite}
 .brandLogo:hover{animation:logoWink .6s ease-in-out;transform:rotate(-4deg) scale(1.05)}
 @media(prefers-reduced-motion:reduce){.brandLogo,.brandLogo:hover{animation:none}}
+/* V2 : liens de texte selon la charte (le reset .site a ne vaut que pour la V1) */
+.site[data-version="v2"] main a:not([class]){color:#00716f;text-decoration:underline;text-underline-offset:3px}
+.site[data-version="v2"] main a:not([class]):hover{color:#0e2526}

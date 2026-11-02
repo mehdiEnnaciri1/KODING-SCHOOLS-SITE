@@ -1,25 +1,5 @@
-@keyframes kobotWelcome {
-  0% { opacity: 0; transform: translate(40px, 100px) rotate(-20deg) scale(.78); }
-  22% { opacity: 1; transform: translate(-9px, -34px) rotate(9deg) scale(1.06); }
-  43% { transform: translate(5px, 15px) rotate(-7deg) scale(.98); }
-  64% { transform: translate(-3px, -14px) rotate(4deg) scale(1.025); }
-  82% { transform: translate(0, 5px) rotate(-1.8deg) scale(.995); }
-  100% { opacity: 1; transform: none; }
-}
-@keyframes kobotShadow { 0% { opacity: 0; transform: scale(.5); } 48% { opacity: .4; transform: scale(1.08); } 100% { opacity: .3; transform: scale(1); } }
-@keyframes kobotFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-@keyframes kobotFloatShadow { 0%, 100% { opacity: .38; transform: scale(.83); } 50% { opacity: .2; transform: scale(1.07); } }
-.stage { position: relative; width: 100%; height: 100%; perspective: 850px; }
-.shadow { position: absolute; bottom: 6px; left: 28%; width: 44%; height: 22px; border-radius: 50%; background: #000; opacity: .3; filter: blur(10px); animation: kobotShadow 3.2s ease-out both, kobotFloatShadow 4.6s ease-in-out 3.2s infinite; }
-.portrait { position: absolute; inset: 0; pointer-events: none; transform-origin: 50% 64%; transition: transform .48s cubic-bezier(.2, 1.15, .35, 1); transform: translate3d(var(--kx, 0px), var(--ky, 0px), 0) rotateZ(var(--kt, 0deg)) rotateY(var(--kyaw, 0deg)) rotateX(var(--kp, 0deg)) scale(var(--ks, 1)); }
-.welcome { width: 100%; height: 100%; transform-origin: 50% 65%; animation: kobotWelcome 3.2s cubic-bezier(.22, .7, .25, 1) both; }
-.float { width: 100%; height: 100%; animation: kobotFloat 4.6s ease-in-out 3.2s infinite; }
-.img { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; filter: drop-shadow(0 16px 40px rgba(14, 37, 38, .14)); }
 .cta { transition: transform .25s ease, box-shadow .25s ease; }
 .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255, 156, 19, .35); }
 .ghost { transition: background .25s ease, color .25s ease; }
 .ghost:hover { background: #fff; color: #0e2526 !important; }
-@media (prefers-reduced-motion: reduce) {
-  .shadow, .welcome, .float { animation: none; }
-  .portrait, .cta, .ghost { transition: none; }
-}
+@media (prefers-reduced-motion: reduce) { .cta, .ghost { transition: none; } }

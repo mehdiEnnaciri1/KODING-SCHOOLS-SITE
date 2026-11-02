@@ -11,3 +11,20 @@
 
 .mobileLang{display:flex;gap:6px;align-items:center;padding:14px 0 4px;font-size:15px;color:#4a6365}.mobileLang strong{color:#0e2526;font-weight:700}.mobileLang a{color:#4a6365;text-decoration:none;font-weight:500}
 @media(min-width:1101px){[data-version="v2"] .bar{width:min(1200px,calc(100% - 48px));min-height:84px}}
+
+/* Menu mobile V2 (< 1000 px) : bouton « Menu » en pilule, lignes de 52 px, boutons pleins en bas */
+@media(min-width:1001px) and (max-width:1180px){[data-version="v2"] .desktop{display:flex}[data-version="v2"] .menu,[data-version="v2"] .mobile{display:none}}
+@media(max-width:1000px){
+[data-version="v2"] .desktop,[data-version="v2"] .lang{display:none}
+[data-version="v2"] .actions .login{display:none}
+[data-version="v2"] .menu{display:inline-flex;width:auto;height:auto;min-height:44px;padding:8px 20px;border:1.5px solid #0e2526;border-radius:999px;background:#fff;color:#0e2526;font-size:15px!important;font-weight:700;cursor:pointer;font-family:inherit}
+[data-version="v2"] .mobile{display:flex;flex-direction:column;padding:8px 24px 24px;background:#fff;border-top:1px solid #cfe3e1;border-bottom:1px solid #cfe3e1;position:absolute;left:0;right:0;top:100%;max-height:calc(100dvh - 80px);overflow-y:auto}
+[data-version="v2"] .mobileParents{background:#f0fffe;border:1px solid #cfe3e1;border-radius:16px;padding:16px 20px;margin:8px 0 12px;font-weight:700;font-size:16px;display:flex;flex-direction:column;gap:4px}
+[data-version="v2"] .mobileParents>span{font-size:14px;font-weight:400;color:#4a6365;margin:0}
+[data-version="v2"] .mobile>.mobileRow{min-height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfe3e1;font-size:17px;font-weight:500;color:#0e2526;padding:0;text-decoration:none}
+[data-version="v2"] .mobileRow>span{color:#00716f}
+[data-version="v2"] .mobile>.mobileDemo,[data-version="v2"] .mobile>.mobileLogin{border:0;border-radius:999px;padding:16px 28px;font-size:16px;font-weight:700;text-align:center;justify-content:center;text-decoration:none;min-height:0;margin:0}
+[data-version="v2"] .mobile>.mobileDemo{background:#ff9c13;color:#0e2526;margin-top:24px}
+[data-version="v2"] .mobile>.mobileLogin{background:#0e2526;color:#fff;margin-top:12px}
+[data-version="v2"] .mobileLang{justify-content:center;font-size:14px;font-weight:500;padding-top:12px}
+}

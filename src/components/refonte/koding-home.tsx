@@ -11,7 +11,7 @@ import { LessonResources } from "./lesson-resources";
 import { SchoolDeployment } from "./school-deployment";
 import { SchoolTestimony } from "./school-testimony";
 import { MediaCoverage } from "./media-coverage";
-import { PresseV2, SeanceV2 } from "./home-sections-v2";
+import { ClosingV2, PresseV2, SeanceV2, TestimonyV2 } from "./home-sections-v2";
 import { HeroV2 } from "./hero-v2";
 import { useSiteMotion } from "./page-kit";
 import { BlogV2, DeploiementV2, FaqV2, ParentsV2 } from "./home-sections-v2b";
@@ -69,12 +69,12 @@ export function KodingHome({ version = "v1" }: { version?: HomeVersion }) {
       {version === "v1" && <AdaptedPath />}
       {version === "v2" ? <SeanceV2 /> : <LessonResources />}
       {version === "v2" ? <DeploiementV2 onContact={() => setModal("demo")} /> : <SchoolDeployment onContact={() => setModal("demo")} />}
-      <SchoolTestimony />
+      {version === "v2" ? <TestimonyV2 /> : <SchoolTestimony />}
       {version === "v2" ? <PresseV2 /> : <MediaCoverage />}
       {version === "v2" ? <ParentsV2 /> : <ParentsGateway />}
       {version === "v2" ? <FaqV2 /> : <SchoolFaq />}
       {version === "v2" ? <BlogV2 /> : <BlogPreview />}
-      <HomeClosing onPresentation={() => setModal("demo")} />
+      {version === "v2" ? <ClosingV2 onDemo={() => setModal("demo")} /> : <HomeClosing onPresentation={() => setModal("demo")} />}
     </main>
     <SiteFooter />
     <dialog ref={dialog} className={s.dialog} onCancel={() => setModal(null)} onClick={e => { if (e.target === e.currentTarget) setModal(null); }} aria-labelledby="dialog-title"><div className={s.dialogInner}><button className={s.closeButton} onClick={() => setModal(null)} aria-label="Fermer la fenêtre"><Icon name="close" /></button>{modal === "demo" ? <><h2 id="dialog-title">Découvrir Koding Schools pour votre école.</h2><p>Un échange pour parcourir le programme, découvrir les ressources d’une séance et identifier le point de départ de votre établissement.</p><ul><li>Vos niveaux et votre organisation</li><li>Une démonstration de la plateforme</li><li>Les étapes pour démarrer</li></ul><a className={s.orangeButton} href="/contact?profil=ecole">Contacter l’équipe</a></> : null}</div></dialog>
