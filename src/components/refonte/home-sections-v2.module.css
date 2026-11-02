@@ -1,0 +1,16 @@
+.kobot { width: 160px; height: auto; flex-shrink: 0; transform-origin: 50% 90%; animation: kobotFloat 4.2s ease-in-out infinite; }
+.kobot:hover { animation-duration: 1.6s; }
+@keyframes kobotFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+.rail::-webkit-scrollbar { display: none; }
+.lessonCard { transition: transform .3s ease, box-shadow .3s ease; }
+.lessonCard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(14, 37, 38, .08); }
+.pressCard { transition: transform .3s ease, border-color .3s ease; }
+.pressCard:hover { transform: translateY(-4px); border-color: #3eccc5 !important; }
+@media (prefers-reduced-motion: reduce) {
+  .kobot { animation: none; }
+  .lessonCard, .pressCard { transition: none; }
+  .lessonCard:hover, .pressCard:hover { transform: none; }
+}

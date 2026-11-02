@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { S, st } from "./page-kit";
+import { ProgrammeStart } from "./home-sections-v2";
 
 // Section « Ce que vos élèves vont apprendre » de la maquette Accueil Charte 2026.
 const DOMAINS = [
@@ -120,15 +121,7 @@ export function ProgrammeDomains() {
           <p style={st("margin:0;font-size:14px;line-height:22px;color:#4a6365")}>{d.caption}</p>
         </div>
       </div>
-      <div style={st("display:flex;align-items:center;gap:32px;flex-wrap:wrap;padding-top:48px;border-top:1px solid #cfe3e1")}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/charte/kobot/kobot-learning.png" alt="Kobot devant un ordinateur" style={st("width:160px;height:auto;flex-shrink:0")} />
-        <div style={st("flex:1 1 420px;display:flex;flex-direction:column;gap:12px")}>
-          <h3 style={st("margin:0;font-size:24px;line-height:32px;font-weight:700;color:#0e2526;text-wrap:balance")}>Votre école commence aujourd’hui. Un programme adapté au niveau de vos élèves.</h3>
-          <p style={st("margin:0;font-size:16px;line-height:26px;color:#4a6365;max-width:65ch")}>Un positionnement initial permet de choisir un programme adapté à leurs acquis, même s’ils n’ont jamais fait d’informatique. La progression rejoint ensuite le programme cible.</p>
-          <a href="/refonte-v2/programme" style={S.link}>Explorez le programme cible complet →</a>
-        </div>
-      </div>
+      <ProgrammeStart />
     </div>
   </section>;
 }

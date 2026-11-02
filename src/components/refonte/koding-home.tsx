@@ -11,6 +11,7 @@ import { LessonResources } from "./lesson-resources";
 import { SchoolDeployment } from "./school-deployment";
 import { SchoolTestimony } from "./school-testimony";
 import { MediaCoverage } from "./media-coverage";
+import { PresseV2, SeanceV2 } from "./home-sections-v2";
 import { BlogPreview } from "./blog-preview";
 import { SchoolFaq } from "./school-faq";
 import { ParentsGateway } from "./parents-gateway";
@@ -63,10 +64,10 @@ export function KodingHome({ version = "v1" }: { version?: HomeVersion }) {
       </div></section>
       </>}
       {version === "v1" && <AdaptedPath />}
-      <LessonResources />
+      {version === "v2" ? <SeanceV2 /> : <LessonResources />}
       <SchoolDeployment onContact={() => setModal("demo")} />
       <SchoolTestimony />
-      <MediaCoverage />
+      {version === "v2" ? <PresseV2 /> : <MediaCoverage />}
       <ParentsGateway />
       <SchoolFaq illustration={version === "v2" ? <CompanionSprite pose="thinking" /> : undefined} />
       <BlogPreview />
